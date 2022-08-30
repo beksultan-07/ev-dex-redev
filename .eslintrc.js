@@ -1,5 +1,4 @@
 module.exports = {
-	sapce: true,
 	env: {
 		browser: true,
 		es2021: true,
@@ -27,8 +26,10 @@ module.exports = {
 		"react",
 	],
 	rules: {
-		"quotes": ["error", "double"],
+		quotes: ["error", "double"],
+		"no-unused-vars": "warn",
 		"jsx-quotes": ["error", "prefer-double"],
 		"no-console": "warn",
+		"capitalized-comments": "off",
 	},
 };
