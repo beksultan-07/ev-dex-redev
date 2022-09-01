@@ -16,8 +16,7 @@ const NavbarBlock = styled.nav<BurgerProps>`
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(42.1005px);
+    background: #fff;
     padding: 70px 0px 70px 70px;
     transition: .3s;
     position: fixed;

@@ -11,13 +11,16 @@ import {ReactComponent as Twitter} from '../../assets/social/twitter.svg';
 import {useSvgComponent} from '../../hooks/useSvgComponent';
 
 const Wrap = styled.section`
+  min-height: 100vh;
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 `;
 const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  height: 100%;
   @media (max-width: 960px) {
     flex-direction: column-reverse;
   }
@@ -114,10 +117,6 @@ const Video = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  @media(max-width: 476px){
-    object-fit: unset;
-    height: auto;
-  }
 `;
 
 const Banner = () => {
@@ -133,7 +132,6 @@ const Banner = () => {
 
 		<>
 			<Wrap>
-
 				<Container>
 					<Content>
 						<ContentText>
