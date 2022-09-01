@@ -11,13 +11,18 @@ import {ReactComponent as Twitter} from '../../assets/social/twitter.svg';
 import {useSvgComponent} from '../../hooks/useSvgComponent';
 
 const Wrap = styled.section`
+`;
+const Content = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
   @media (max-width: 960px) {
     flex-direction: column-reverse;
   }
 `;
-const Content = styled.div`
+const ContentText = styled.div`
   max-width: 564px;
 `;
 const Title = styled.h1`
@@ -68,17 +73,20 @@ const SocialWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 30px;
-  @media (max-width: 960px){
+  @media (max-width: 960px) {
     justify-content: center;
   }
 `;
 const SocialLink = styled.a`
   cursor: pointer;
+
   svg {
-      transition: .3s ease-in-out;
-      fill: #949BA0;}
-  :hover{
-    svg{
+    transition: .3s ease-in-out;
+    fill: #949BA0;
+  }
+
+  :hover {
+    svg {
       fill: #282c34;
     }
   }
@@ -106,6 +114,10 @@ const Video = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  @media(max-width: 476px){
+    object-fit: unset;
+    height: auto;
+  }
 `;
 
 const Banner = () => {
@@ -120,28 +132,31 @@ const Banner = () => {
 	return (
 
 		<>
-			<Container>
-				<Wrap>
+			<Wrap>
+
+				<Container>
 					<Content>
-						<Title>Безопасность <YellowTitle>Скорость</YellowTitle> Ликвидность</Title>
-						<Desc>Envoys Vision - это доступность к финансовым рынкам, безопасность инвестирования в стартапы, высокая
-            доходность для поставщиков ликвидности!</Desc>
-						<ButtonWrap>
-							<Button>Launch App</Button>
-							<ButtonOutline>More info</ButtonOutline>
-						</ButtonWrap>
-						<SocialWrap>
-							{icons.map((icon, index) => (
-								<SocialLink href={icon.href} key={index}>{useSvgComponent(icon.icon)}</SocialLink>))}
-						</SocialWrap>
+						<ContentText>
+							<Title>Безопасность <YellowTitle>Скорость</YellowTitle> Ликвидность</Title>
+							<Desc>Envoys Vision - это доступность к финансовым рынкам, безопасность инвестирования в стартапы, высокая
+                доходность для поставщиков ликвидности!</Desc>
+							<ButtonWrap>
+								<Button>Launch App</Button>
+								<ButtonOutline>More info</ButtonOutline>
+							</ButtonWrap>
+							<SocialWrap>
+								{icons.map((icon, index) => (
+									<SocialLink href={icon.href} key={index}>{useSvgComponent(icon.icon)}</SocialLink>))}
+							</SocialWrap>
+						</ContentText>
+						<VideoWrap>
+							<Video autoPlay={true} loop muted={true} playsInline={true}>
+								<source src={VideoItem as string}/>
+							</Video>
+						</VideoWrap>
 					</Content>
-					<VideoWrap>
-						<Video autoPlay={true} loop muted={true} playsInline={true}>
-							<source src={VideoItem as string}/>
-						</Video>
-					</VideoWrap>
-				</Wrap>
-			</Container>
+				</Container>
+			</Wrap>
 		</>
 	);
 };

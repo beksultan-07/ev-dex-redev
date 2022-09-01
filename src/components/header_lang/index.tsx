@@ -52,10 +52,10 @@ const Text = styled.span`
 const WebIcon = styled.img``;
 
 type ArrowIconProps = {
-	rotate: boolean;
+	rotate: 'true' | 'false';
 };
 const ArrowIcon = styled.img<ArrowIconProps>`
-  transform: rotate(${props => props.rotate ? '180deg' : 'none'});
+  transform: rotate(${props => props.rotate ? '180deg' : '0'});
   transition: .3s ease-in-out;
 `;
 type DropDownProps = {
@@ -120,7 +120,7 @@ const HeaderLang: React.FC<Props> = ({langActive, setLangActive}) => (
 					setLangActive(val => !val);
 				}}>
 					<WebIcon src={Web as string}/>
-					<ArrowIcon src={Arrow as string} rotate={langActive}/>
+					<ArrowIcon src={Arrow as string} rotate={langActive ? 'true' : 'false'}/>
 				</Button>
 			</Content>
 			<DropDown show={langActive}>

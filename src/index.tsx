@@ -52,6 +52,9 @@ const GlobalStyles = createGlobalStyle`
   a{
     text-decoration: none;
   }
+  h1,h2,h3,h4,h5,h6{
+    margin: 0;
+  }
 `;
 
 const root = ReactDOM.createRoot(
