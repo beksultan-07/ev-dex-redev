@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header';
 import Layout from './components/layout';
+import Banner from './components/banner';
 
 const App: React.FC = () => (
 	<>
 		<Layout>
-      text
+			<Banner/>
 		</Layout>
 	</>
 );

@@ -21,7 +21,7 @@ const LayoutInside = styled.div`
   }
 `;
 const Layout: React.FC<Props> = props => {
-	const [langActive, setLangActive] = React.useState(true);
+	const [langActive, setLangActive] = React.useState(false);
 	useEffect(() => {
 		console.log(langActive);
 	}, []);
