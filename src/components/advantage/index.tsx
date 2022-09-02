@@ -5,14 +5,8 @@ import DollarIcon from '../../assets/advantage/icon1.svg';
 import LikeIcon from '../../assets/advantage/icon2.svg';
 import SafeIcon from '../../assets/advantage/icon3.svg';
 import CaseIcon from '../../assets/advantage/icon4.svg';
+import {Wrap} from '../../UI/UI';
 
-const Wrap = styled.section`
-  min-height: 100vh;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  
-`;
 const Background = styled.div`
   background: url(${BackgroundImg}) 0 0 / cover;
   width: 100%;

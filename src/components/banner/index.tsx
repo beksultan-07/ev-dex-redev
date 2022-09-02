@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Button, ButtonOutline, Container} from '../../UI/UI';
+import {Button, ButtonOutline, Container, Wrap} from '../../UI/UI';
 import VideoItem from '../../assets/banner/banner.mp4';
 import {ReactComponent as Telegram} from '../../assets/social/telegram.svg';
 import {ReactComponent as Facebook} from '../../assets/social/facebook.svg';
@@ -10,13 +10,6 @@ import {ReactComponent as Youtube} from '../../assets/social/youtube.svg';
 import {ReactComponent as Twitter} from '../../assets/social/twitter.svg';
 import {useSvgComponent} from '../../hooks/useSvgComponent';
 
-const Wrap = styled.section`
-  min-height: 100vh;
-  max-height: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
 const Content = styled.div`
   display: flex;
   align-items: center;
@@ -119,7 +112,7 @@ const Video = styled.video`
   object-fit: cover;
 `;
 
-const Banner = () => {
+const Banner: React.FC = () => {
 	const icons = [
 		{icon: TelegramIcon, href: '#'},
 		{icon: FacebookIcon, href: '#'},
