@@ -100,6 +100,7 @@ const IconWrap = styled.div`
   padding: 14px;
   background: #F9F9F9;
   border-radius: 20px;
+  max-width: 64px;
 `;
 const Icon = styled.img``;
 type ItemType = {
@@ -131,16 +132,18 @@ const OurAdvantages: React.FC = () => {
 	];
 	return (
 		<>
-			<Wrap>
+			<Wrap bg={false}>
 				<Container maxWidth={'1186px'}>
-					<Title indentBottom={true} textAlign={true}>Наши преимущества</Title>
+					<Title indentBottom={'120px'} textAlign={true}>Наши преимущества</Title>
 					<Content>
 						{items.map((item, index) => (
 							<Column key={index}>
 								<Item >
 									<Num>{item.num}</Num>
 									<TextBlock>
-										<Icon src={item.icon} alt={item.icon}/>
+										<IconWrap>
+											<Icon src={item.icon} alt={item.icon}/>
+										</IconWrap>
 										<ItemTitle>{item.title}</ItemTitle>
 										<Desc>{item.desc}</Desc>
 									</TextBlock>

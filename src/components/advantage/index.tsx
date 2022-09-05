@@ -78,7 +78,7 @@ const Advantage = () => {
 	];
 	return (
 		<>
-			<Wrap>
+			<Wrap bg={false}>
 				<Background>
 					<FlexCenter>
 						<Content>

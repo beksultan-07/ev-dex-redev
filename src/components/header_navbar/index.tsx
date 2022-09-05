@@ -74,7 +74,7 @@ const HeaderNavbar: React.FC<Props> = ({burger, langActive, setLangActive}) => {
 		<>
 			<NavbarBlock active={burger}>
 				{links.map(link => (<Link key={link.id} href={link.href}>{link.text}</Link>))}
-				<Button>Перейти в APP</Button>
+				<Button href="#">Перейти в APP</Button>
 				<HeaderLang langActive={langActive} setLangActive={setLangActive}/>
 			</NavbarBlock>
 		</>

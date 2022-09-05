@@ -10,8 +10,7 @@ const HeaderBlock = styled.div`
   padding: 15px 0;
   position: fixed;
   width: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(42.1005px);
+  background: #fff;
   filter: drop-shadow(0px 4px 10px rgba(200, 200, 200, 0.1));
   z-index: 3;
 `;

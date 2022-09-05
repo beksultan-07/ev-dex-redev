@@ -124,7 +124,7 @@ const Banner: React.FC = () => {
 	return (
 
 		<>
-			<Wrap>
+			<Wrap bg={false}>
 				<Container>
 					<Content>
 						<ContentText>
@@ -132,8 +132,8 @@ const Banner: React.FC = () => {
 							<Desc>Envoys Vision - это доступность к финансовым рынкам, безопасность инвестирования в стартапы, высокая
                 доходность для поставщиков ликвидности!</Desc>
 							<ButtonWrap>
-								<Button>Launch App</Button>
-								<ButtonOutline>More info</ButtonOutline>
+								<Button href="#">Launch App</Button>
+								<ButtonOutline href="#">More info</ButtonOutline>
 							</ButtonWrap>
 							<SocialWrap>
 								{icons.map((icon, index) => (
