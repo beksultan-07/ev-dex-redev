@@ -75,7 +75,6 @@ const SocialWrap = styled.div`
 `;
 const SocialLink = styled.a`
   cursor: pointer;
-
   svg {
     transition: .3s ease-in-out;
     fill: #949BA0;

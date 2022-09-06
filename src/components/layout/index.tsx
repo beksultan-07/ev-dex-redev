@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import Header from '../header';
+import Footer from '../footer';
 
 type Props = {
 	children: any;
@@ -31,6 +32,7 @@ const Layout: React.FC<Props> = props => {
 				<LayoutInside>
 					{props.children}
 				</LayoutInside>
+				<Footer/>
 			</LayoutWrap>
 		</>
 

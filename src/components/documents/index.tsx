@@ -14,8 +14,6 @@ import DocumentImg9 from '../../assets/documents/Документы-ЕВДЕ9.jp
 import DocumentImg10 from '../../assets/documents/Документы-ЕВДЕ10.jpg';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import {Autoplay} from 'swiper';
 
 const Wrap = styled.section`
