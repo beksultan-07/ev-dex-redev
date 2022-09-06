@@ -49,7 +49,7 @@ const Header: React.FC<Props> = ({langActive, setLangActive}) => {
 			<HeaderBlock>
 				<Container>
 					<Content>
-						<LogoLink>
+						<LogoLink href={'#'}>
 							<LogoImg src={Logo as string} alt="logo"/>
               Envoys Vision
 						</LogoLink>
