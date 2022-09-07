@@ -35,6 +35,10 @@ const GlobalStyles = createGlobalStyle`
   ul,
   ol {
     list-style: none;
+	  padding: 0;
+  }
+  li{
+	  padding: 0;
   }
   img {
     max-width: 100%;

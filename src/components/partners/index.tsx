@@ -87,8 +87,8 @@ const Partners = () => {
 								centeredSlides={true}
 								autoplay={{
 									delay: 0,
-									disableOnInteraction: false,
 								}}
+								allowTouchMove={false}
 								slidesPerView="auto"
 								speed={4000}
 								spaceBetween={50}
@@ -128,9 +128,9 @@ const Partners = () => {
 								centeredSlides={true}
 								autoplay={{
 									delay: 0,
-									disableOnInteraction: false,
 									reverseDirection: true,
 								}}
+								allowTouchMove = {false}
 								slidesPerView="auto"
 								speed={4000}
 								spaceBetween={50}
