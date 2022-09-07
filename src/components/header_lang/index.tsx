@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import Web from '../../assets/lang/web.svg';
-import Arrow from '../../assets/lang/arrow-down.svg';
+import {ReactComponent as Web} from '../../assets/lang/web.svg';
+import {ReactComponent as Arrow} from '../../assets/lang/arrow-down.svg';
 
 const Button = styled.button`
   display: flex;
@@ -14,7 +14,7 @@ const Button = styled.button`
 const Wrap = styled.div`
   position: relative;
   z-index: 1;
-  @media (max-width: 1125px){
+  @media (max-width: 1125px) {
     margin-top: 55px;
   }
 `;
@@ -39,24 +39,32 @@ const Content = styled.div`
     }
   }
 `;
-const Text = styled.span`
+const Text = styled.span<DarkProps>`
   font-weight: 400;
   font-size: 18px;
   line-height: calc(21 / 18 * 100%);
-  color: #133D65;
+  color: ${props => props.dark ? '#fff' : '#133D65'};
   display: none;
   @media (max-width: 1125px) {
     display: block;
   }
 `;
-const WebIcon = styled.img``;
-
+type DarkProps = {
+	dark: boolean;
+};
+const WebIcon = styled(Web)<DarkProps>`
+  fill: ${props => props.dark ? '#fff' : '#133D65'};
+`;
 type ArrowIconProps = {
 	rotate: 'true' | 'false';
+	dark: boolean;
 };
-const ArrowIcon = styled.img<ArrowIconProps>`
+const ArrowIcon = styled(Arrow)<ArrowIconProps>`
   transform: rotate(${props => props.rotate ? '180deg' : '0'});
   transition: .3s ease-in-out;
+	path{
+		stroke: ${props => props.dark ? '#fff' : '#133D65'};
+	}
 `;
 type DropDownProps = {
 	show: boolean;
@@ -97,9 +105,11 @@ const DropDownButton = styled.button`
   border: none;
   background: transparent;
   margin-bottom: 20px;
-  :last-child{
+
+  :last-child {
     margin: 0;
   }
+
   :hover {
     color: #045599;
     font-weight: 600;
@@ -109,18 +119,19 @@ const DropDownButton = styled.button`
 type Props = {
 	langActive: boolean;
 	setLangActive: React.Dispatch<React.SetStateAction<boolean>>;
+	dark: boolean;
 };
-const HeaderLang: React.FC<Props> = ({langActive, setLangActive}) => (
+const HeaderLang: React.FC<Props> = ({langActive, setLangActive, dark}) => (
 	<>
 		<Wrap>
 			<Content>
-				<Text> Русский </Text>
+				<Text dark={dark}> Русский </Text>
 				<Button onClick={() => {
 					console.log('langActive');
 					setLangActive(val => !val);
 				}}>
-					<WebIcon src={Web as string}/>
-					<ArrowIcon src={Arrow as string} rotate={langActive ? 'true' : 'false'}/>
+					<WebIcon dark={dark}/>
+					<ArrowIcon dark={dark} rotate={langActive ? 'true' : 'false'}/>
 				</Button>
 			</Content>
 			<DropDown show={langActive}>

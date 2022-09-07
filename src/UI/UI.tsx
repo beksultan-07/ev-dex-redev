@@ -27,6 +27,10 @@ export const Button = styled.a`
   background: #F48020;
   border-radius: 8px;
   cursor: pointer;
+  transition: .3s ease-in-out;
+  :hover{
+    background: rgb(223, 113, 22);
+  }
 `;
 export const ButtonOutline = styled.a`
   padding: 17px 30px;

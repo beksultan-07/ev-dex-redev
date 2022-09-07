@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 type BurgerProps = {
 	active: boolean;
+	dark: boolean;
 };
 const NavbarBlock = styled.nav<BurgerProps>`
   display: flex;
@@ -16,7 +17,7 @@ const NavbarBlock = styled.nav<BurgerProps>`
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    background: #fff;
+    background: ${props => props.dark ? '#111A23' : '#fff'};
     padding: 70px 0px 70px 70px;
     transition: .3s;
     position: fixed;
@@ -30,13 +31,16 @@ const NavbarBlock = styled.nav<BurgerProps>`
     padding: 40px 0 40px 40px;
   }
 `;
-const Link = styled.a`
+const Link = styled.a<BurgerProps>`
   font-weight: 400;
   font-size: 14px;
-  color: #133D65;
+  color: ${props => props.dark ? '#fff' : '#133D65'};
   cursor: pointer;
+	transition: .3s ease-in-out;
+	:hover{
+		color: #F48020;
+	}
   @media (max-width: 1125px) {
-    color: #133D65;
     font-size: 18px;
   }
 `;
@@ -48,6 +52,10 @@ const Button = styled.a`
   font-size: 14px;
   color: #FFFFFF;
   cursor: pointer;
+	transition: .3s ease-in-out;
+	:hover{
+    background: rgb(223, 113, 22);
+	}
   @media (max-width: 1125px) {
     font-size: 16px;
     padding: 17px 62px;
@@ -59,9 +67,10 @@ type Props = {
 	burger: boolean;
 	langActive: boolean;
 	setLangActive: React.Dispatch<React.SetStateAction<boolean>>;
+	dark: boolean;
 };
 
-const HeaderNavbar: React.FC<Props> = ({burger, langActive, setLangActive}) => {
+const HeaderNavbar: React.FC<Props> = ({burger, langActive, setLangActive, dark}) => {
 	const [links] = React.useState([
 		{id: 1, text: 'Наши преймущества', href: '#'},
 		{id: 2, text: 'Факты', href: '#'},
@@ -72,10 +81,10 @@ const HeaderNavbar: React.FC<Props> = ({burger, langActive, setLangActive}) => {
 
 	return (
 		<>
-			<NavbarBlock active={burger}>
-				{links.map(link => (<Link key={link.id} href={link.href}>{link.text}</Link>))}
+			<NavbarBlock dark={dark} active={burger}>
+				{links.map(link => (<Link dark={dark} key={link.id} href={link.href} active={false}>{link.text}</Link>))}
 				<Button href="#">Перейти в APP</Button>
-				<HeaderLang langActive={langActive} setLangActive={setLangActive}/>
+				<HeaderLang dark={dark} langActive={langActive} setLangActive={setLangActive}/>
 			</NavbarBlock>
 		</>
 	);

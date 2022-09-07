@@ -20,6 +20,10 @@ import 'swiper/css/navigation';
 
 import {EffectFade, Navigation, Scrollbar, Mousewheel} from 'swiper';
 const SwiperWrap = styled.div`
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
   .swiper-scrollbar {
     border-radius: 15px;
     position: relative;
@@ -54,11 +58,14 @@ const SwiperWrap = styled.div`
     display: none
   }
 `;
-const Content = styled.div`
+const Slide = styled.div`
+	position: relative;
+`;
+const Info = styled.div`
   position: absolute;
-	top: 50%;
-	left: 35%;
-	transform: translateX(-50%);
+	top: 30%;
+	left: 40%;
+	transform: translate(-50%);
 `;
 const Title = styled.h1`
   font-family: 'Exo 2';
@@ -97,7 +104,7 @@ const Slider = () => {
 	];
 	return (
 		<>
-			<Wrap bg={false}>
+			<SwiperWrap>
 				<Swiper
 					spaceBetween={30}
 					effect={'fade'}
@@ -105,21 +112,23 @@ const Slider = () => {
 					scrollbar={{
 						hide: false,
 					}}
-					mousewheel={true}
+					// mousewheel={true}
 					modules={[EffectFade, Navigation, Scrollbar, Mousewheel]}
 					className="mySwiper"
 				>
 					{slides.map((slide, index) => (
 						<SwiperSlide key={index}>
-							<Content>
-								<Title>{slide.title}</Title>
-								<Text>{slide.text}</Text>
-							</Content>
-							<Image src={slide.img} alt={slide.img}/>
+							<Slide>
+								<Info>
+									<Title>{slide.title}</Title>
+									<Text>{slide.text}</Text>
+								</Info>
+								<Image src={slide.img} alt={slide.img}/>
+							</Slide>
 						</SwiperSlide>
 					))}
 				</Swiper>
-			</Wrap>
+			</SwiperWrap>
 		</>
 	);
 };
