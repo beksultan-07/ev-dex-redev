@@ -127,7 +127,6 @@ const HeaderLang: React.FC<Props> = ({langActive, setLangActive, dark}) => (
 			<Content>
 				<Text dark={dark}> Русский </Text>
 				<Button onClick={() => {
-					console.log('langActive');
 					setLangActive(val => !val);
 				}}>
 					<WebIcon dark={dark}/>

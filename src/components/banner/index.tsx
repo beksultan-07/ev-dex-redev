@@ -132,7 +132,7 @@ const Banner: React.FC = () => {
                 доходность для поставщиков ликвидности!</Desc>
 							<ButtonWrap>
 								<Button href="#">Launch App</Button>
-								<ButtonOutline href="#">More info</ButtonOutline>
+								<ButtonOutline to="/dex-info">More info</ButtonOutline>
 							</ButtonWrap>
 							<SocialWrap>
 								{icons.map((icon, index) => (

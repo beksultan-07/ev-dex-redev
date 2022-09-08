@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 type ContainerProps = {
 	maxWidth?: string;
@@ -32,7 +33,7 @@ export const Button = styled.a`
     background: rgb(223, 113, 22);
   }
 `;
-export const ButtonOutline = styled.a`
+export const ButtonOutline = styled(Link)`
   padding: 17px 30px;
   font-weight: 700;
   font-size: 14px;
