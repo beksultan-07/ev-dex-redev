@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {ReactComponent as Web} from '../../assets/lang/web.svg';
 import {ReactComponent as Arrow} from '../../assets/lang/arrow-down.svg';
@@ -60,7 +60,7 @@ type ArrowIconProps = {
 	dark: boolean;
 };
 const ArrowIcon = styled(Arrow)<ArrowIconProps>`
-  transform: rotate(${props => props.rotate ? '180deg' : '0'});
+  transform: rotate(${props => props.rotate === 'true' ? '180deg' : '0'});
   transition: .3s ease-in-out;
 	path{
 		stroke: ${props => props.dark ? '#fff' : '#133D65'};
@@ -121,24 +121,31 @@ type Props = {
 	setLangActive: React.Dispatch<React.SetStateAction<boolean>>;
 	dark: boolean;
 };
-const HeaderLang: React.FC<Props> = ({langActive, setLangActive, dark}) => (
-	<>
-		<Wrap>
-			<Content>
-				<Text dark={dark}> Русский </Text>
-				<Button onClick={() => {
-					setLangActive(val => !val);
-				}}>
-					<WebIcon dark={dark}/>
-					<ArrowIcon dark={dark} rotate={langActive ? 'true' : 'false'}/>
-				</Button>
-			</Content>
-			<DropDown show={langActive}>
-				<DropDownButton>Русский</DropDownButton>
-				<DropDownButton>English</DropDownButton>
-			</DropDown>
-		</Wrap>
-	</>
-);
+
+const HeaderLang: React.FC<Props> = ({langActive, setLangActive, dark}) => {
+	useEffect(() => {
+		console.log(langActive);
+	}, []);
+
+	return (
+		<>
+			<Wrap>
+				<Content>
+					<Text dark={dark}> Русский </Text>
+					<Button onClick={() => {
+						setLangActive(true);
+					}}>
+						<WebIcon dark={dark}/>
+						<ArrowIcon dark={dark} rotate={langActive ? 'true' : 'false'}/>
+					</Button>
+				</Content>
+				<DropDown show={langActive}>
+					<DropDownButton>Русский</DropDownButton>
+					<DropDownButton>English</DropDownButton>
+				</DropDown>
+			</Wrap>
+		</>
+	);
+};
 
 export default HeaderLang;

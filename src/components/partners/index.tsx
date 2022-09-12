@@ -67,7 +67,7 @@ const Image = styled.img`
   width: 100%;
 `;
 
-const Partners = () => {
+const Partners: React.FC = () => {
 	const slides = [
 		{img: PartnersImg1 as string},
 		{img: PartnersImg2 as string},

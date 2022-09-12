@@ -40,7 +40,7 @@ const Desc = styled.p`
   max-width: 808px;
 `;
 
-const DexTop = () => (
+const DexTop: React.FC = () => (
 	<>
 		<Wrap>
 			<Content>

@@ -70,7 +70,7 @@ const Image = styled.img`
 	width: 100%;
 `;
 
-const Request = () => (
+const Request: React.FC = () => (
 	<>
 		<Wrap>
 			<Content>

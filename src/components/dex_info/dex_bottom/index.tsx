@@ -13,7 +13,7 @@ const Wrap = styled.div`
 	}
 `;
 
-const DexBottom = () => (
+const DexBottom: React.FC = () => (
 	<>
 		<Wrap>
 			<Description/>

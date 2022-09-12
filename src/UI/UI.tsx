@@ -20,7 +20,10 @@ export const Wrap = styled.section<WrapProps>`
   align-items: center;
   background: ${props => props.bg ? '#111A23' : '#fff'};
 `;
-export const Button = styled.a`
+type ButtonProps = {
+	unvisible: boolean;
+};
+export const Button = styled.a<ButtonProps>`
   padding: 17px 30px;
   color: #ffff;
   font-size: 14px;
@@ -29,19 +32,29 @@ export const Button = styled.a`
   border-radius: 8px;
   cursor: pointer;
   transition: .3s ease-in-out;
+	display: ${props => props.unvisible ? 'none' : 'inline-block'};
   :hover{
     background: rgb(223, 113, 22);
   }
 `;
-export const ButtonOutline = styled(Link)`
+type ButtonOutlineProps = {
+	white: boolean;
+	soon: boolean;
+};
+export const ButtonOutline = styled(Link)<ButtonOutlineProps>`
   padding: 17px 30px;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  color: #0F2B46;
+  color: ${props => props.white ? '#fff' : '#0F2B46'};
   border: 1px solid #F9F9F9;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: ${props => props.soon ? 'not-allowed' : 'pointer'};
+	transition: .3s ease-in-out;
+	:hover{
+		color: ${props => props.soon ? '#fff' : '#F48020'};
+    border-color: ${props => props.soon ? '#fff' : '#F48020'};
+	}
 `;
 type TitleProps = {
 	textAlign: boolean;

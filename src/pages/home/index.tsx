@@ -5,12 +5,14 @@ import OurAdvantages from '../../components/our_advantages';
 import HowItWorks from '../../components/how_it_works';
 import Documents from '../../components/documents';
 import Partners from '../../components/partners';
+import Slider from '../../components/slider';
 
 const Home: React.FC = () => (
 	<>
 		<Banner/>
 		<Advantage/>
 		<OurAdvantages/>
+		<Slider/>
 		<HowItWorks/>
 		<Documents/>
 		<Partners/>

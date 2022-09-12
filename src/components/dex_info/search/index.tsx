@@ -38,7 +38,7 @@ const LinkSpan = styled.span`
 	text-decoration: underline;
 `;
 
-const Search = () => (
+const Search: React.FC = () => (
 	<>
 		<Wrap>
 			<InputFieldBlock>

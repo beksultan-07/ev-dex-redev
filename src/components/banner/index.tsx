@@ -131,8 +131,8 @@ const Banner: React.FC = () => {
 							<Desc>Envoys Vision - это доступность к финансовым рынкам, безопасность инвестирования в стартапы, высокая
                 доходность для поставщиков ликвидности!</Desc>
 							<ButtonWrap>
-								<Button href="#">Launch App</Button>
-								<ButtonOutline to="/dex-info">More info</ButtonOutline>
+								<Button unvisible={false} href="#">Launch App</Button>
+								<ButtonOutline soon={false} white={false} to="/dex-info">More info</ButtonOutline>
 							</ButtonWrap>
 							<SocialWrap>
 								{icons.map((icon, index) => (

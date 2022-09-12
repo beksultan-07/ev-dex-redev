@@ -69,7 +69,7 @@ type ItemType = {
 	num: string;
 };
 
-const Advantage = () => {
+const Advantage: React.FC = () => {
 	const items: ItemType[] = [
 		{img: DollarIcon as string, text: 'Низкие комиссии!', num: '0.1%'},
 		{img: SafeIcon as string, text: 'Total value locked', num: '$625 347 594'},

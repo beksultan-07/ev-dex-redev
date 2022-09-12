@@ -6,6 +6,7 @@ import LogoDark from '../../assets/dark-logo.svg';
 import {ReactComponent as Burger} from '../../assets/burger/burger.svg';
 import {ReactComponent as BurgerActive} from '../../assets/burger/burger-active.svg';
 import HeaderNavbar from '../header_navbar';
+import {Link} from 'react-router-dom';
 
 type HeaderProps = {
 	dark: boolean;
@@ -23,7 +24,7 @@ const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-const LogoLink = styled.a<HeaderProps>`
+const LogoLink = styled(Link)<HeaderProps>`
   font-family: "Exo 2";
   font-weight: 700;
   font-size: 18px;
@@ -33,6 +34,7 @@ const LogoLink = styled.a<HeaderProps>`
   display: flex;
   align-items: center;
   gap: 10px;
+	outline: none;
 `;
 const LogoImg = styled.img``;
 const BurgerButton = styled.button`
@@ -71,7 +73,7 @@ const Header: React.FC<Props> = ({langActive, setLangActive}) => {
 			<HeaderBlock dark={dark}>
 				<Container>
 					<Content>
-						<LogoLink dark={dark} href={'#'}>
+						<LogoLink dark={dark} to="/">
 							<LogoImg src={ dark ? LogoDark as string : Logo as string} alt="logo"/>
               Envoys Vision
 						</LogoLink>

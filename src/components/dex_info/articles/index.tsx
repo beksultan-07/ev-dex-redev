@@ -40,7 +40,7 @@ const LinksLink = styled.a`
 	}
 `;
 
-const Articles = () => {
+const Articles: React.FC = () => {
 	const links = [
 		{href: '#', text: 'Что такое DEX биржа ?'},
 		{href: '#', text: 'Что такое фарминг ?'},

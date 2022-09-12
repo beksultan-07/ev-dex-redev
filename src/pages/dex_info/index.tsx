@@ -23,7 +23,7 @@ const Wrap = styled.section`
   }
 `;
 
-const DexInfo = () => (
+const DexInfo: React.FC = () => (
 	<>
 		<Wrap>
 			<Container>

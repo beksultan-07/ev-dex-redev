@@ -19,7 +19,7 @@ const Image = styled.img`
 	width: 100%;
 `;
 
-const HowItWorks = () => (
+const HowItWorks: React.FC = () => (
 	<>
 		<Wrap bg={false}>
 			<Container>

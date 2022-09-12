@@ -69,7 +69,7 @@ const ReadMoreButton = styled.button<ReadMoreBtnProps>`
   }
 `;
 
-const Description = () => {
+const Description: React.FC = () => {
 	const descriptionsTop = [
 		{
 			text: 'Envoys Vision DEX соединяет в себе все преимущества децентрализованных бирж, но при этом открывает для пользователей возможности торговли токенизированными акциями и другими ценными бумагами.',

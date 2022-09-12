@@ -131,7 +131,7 @@ const CopyText = styled.span`
   font-size: 12px;
 `;
 
-const Footer = () => {
+const Footer: React.FC = () => {
 	const socialLinks = [
 		{icon: FacebookIcon, href: '#'},
 		{icon: InstagramIcon, href: '#'},
