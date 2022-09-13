@@ -14,6 +14,7 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+	padding-top: 65px;
   @media (max-width: 960px) {
     flex-direction: column-reverse;
   }

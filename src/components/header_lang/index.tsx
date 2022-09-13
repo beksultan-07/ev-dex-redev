@@ -39,31 +39,31 @@ const Content = styled.div`
     }
   }
 `;
+type DarkProps = {
+	dark: 'true' | 'false';
+};
 const Text = styled.span<DarkProps>`
   font-weight: 400;
   font-size: 18px;
   line-height: calc(21 / 18 * 100%);
-  color: ${props => props.dark ? '#fff' : '#133D65'};
+  color: ${props => props.dark === 'true' ? '#fff' : '#133D65'};
   display: none;
   @media (max-width: 1125px) {
     display: block;
   }
 `;
-type DarkProps = {
-	dark: boolean;
-};
 const WebIcon = styled(Web)<DarkProps>`
-  fill: ${props => props.dark ? '#fff' : '#133D65'};
+  fill: ${props => props.dark === 'true' ? '#fff' : '#133D65'};
 `;
 type ArrowIconProps = {
 	rotate: 'true' | 'false';
-	dark: boolean;
+	dark: 'true' | 'false';
 };
 const ArrowIcon = styled(Arrow)<ArrowIconProps>`
   transform: rotate(${props => props.rotate === 'true' ? '180deg' : '0'});
   transition: .3s ease-in-out;
 	path{
-		stroke: ${props => props.dark ? '#fff' : '#133D65'};
+		stroke: ${props => props.dark === 'true' ? '#fff' : '#133D65'};
 	}
 `;
 type DropDownProps = {
@@ -131,12 +131,12 @@ const HeaderLang: React.FC<Props> = ({langActive, setLangActive, dark}) => {
 		<>
 			<Wrap>
 				<Content>
-					<Text dark={dark}> Русский </Text>
+					<Text dark={dark ? 'true' : 'false'}> Русский </Text>
 					<Button onClick={() => {
 						setLangActive(true);
 					}}>
-						<WebIcon dark={dark}/>
-						<ArrowIcon dark={dark} rotate={langActive ? 'true' : 'false'}/>
+						<WebIcon dark={dark ? 'true' : 'false'}/>
+						<ArrowIcon dark={dark ? 'true' : 'false'} rotate={langActive ? 'true' : 'false'}/>
 					</Button>
 				</Content>
 				<DropDown show={langActive}>

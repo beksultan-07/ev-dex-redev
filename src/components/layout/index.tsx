@@ -15,10 +15,6 @@ const LayoutWrap = styled.div`
 
 const LayoutInside = styled.div`
   flex: 1 1 auto;
-
-  @media(max-width: 960px){
-    padding: 65px 0 0 0;
-  }
 `;
 const Layout: React.FC<Props> = props => {
 	const [langActive, setLangActive] = React.useState(false);

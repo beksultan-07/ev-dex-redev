@@ -296,7 +296,7 @@ const Slider: React.FC = () => {
 
 	return (
 		<>
-			<SwiperWrap>
+			<SwiperWrap id="facts">
 				<Swiper
 					spaceBetween={30}
 					effect={'fade'}
@@ -318,7 +318,9 @@ const Slider: React.FC = () => {
 									<Text white={slide.whiteTitle}>{slide.text}</Text>
 									<Buttons>
 										<Button unvisible={slide.unvisible}>{slide.buttonText}</Button>
-										<ButtonOutline soon={slide.unvisible} white={slide.whiteTitle} to={slide.unvisible ? '#' : '/dex-info'}>{slide.buttonOutlineText}</ButtonOutline>
+										<ButtonOutline soon={slide.unvisible} white={slide.whiteTitle} to={slide.unvisible ? '#' : '/dex-info'}>
+											{slide.buttonOutlineText}
+										</ButtonOutline>
 									</Buttons>
 								</Info>
 							</Slide>

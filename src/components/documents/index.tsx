@@ -133,7 +133,7 @@ const Documents: React.FC = () => {
 
 	return (
 		<>
-			<Wrap>
+			<Wrap id="documents">
 				<Container>
 					<Title indentBottom={'90px'} textAlign={true} color={'#fff'}>Документы</Title>
 					<SwiperWrap>

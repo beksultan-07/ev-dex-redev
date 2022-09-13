@@ -9,13 +9,13 @@ import HeaderNavbar from '../header_navbar';
 import {Link} from 'react-router-dom';
 
 type HeaderProps = {
-	dark: boolean;
+	dark: 'true' | 'false';
 };
 const HeaderBlock = styled.div<HeaderProps>`
   padding: 15px 0;
   position: fixed;
   width: 100%;
-  background: ${props => props.dark ? '#111A23' : '#fff'};
+  background: ${props => props.dark === 'true' ? '#111A23' : '#fff'};
   filter: drop-shadow(0px 4px 10px rgba(200, 200, 200, 0.1));
   z-index: 3;
 `;
@@ -29,7 +29,7 @@ const LogoLink = styled(Link)<HeaderProps>`
   font-weight: 700;
   font-size: 18px;
   line-height: calc(24 / 18 * 100%);
-  color: ${props => props.dark ? '#fff' : '#045599'};
+  color: ${props => props.dark === 'true' ? '#fff' : '#045599'};
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -48,14 +48,14 @@ const BurgerButton = styled.button`
 `;
 const BurgerImage = styled(Burger)<HeaderProps>`
   width: 24px;
-	fill: ${props => props.dark ? '#fff' : '#133D65'};
+	fill: ${props => props.dark === 'true' ? '#fff' : '#133D65'};
   @media (min-width: 1125px) {
     display: none;
   }
 `;
 const BurgerImageActive = styled(BurgerActive)<HeaderProps>`
 	width: 24px;
-	fill: ${props => props.dark ? '#fff' : '#133D65'};
+	fill: ${props => props.dark === 'true' ? '#fff' : '#133D65'};
   @media (min-width: 1125px) {
     display: none;
   }
@@ -70,10 +70,10 @@ const Header: React.FC<Props> = ({langActive, setLangActive}) => {
 
 	return (
 		<>
-			<HeaderBlock dark={dark}>
+			<HeaderBlock dark={dark ? 'true' : 'false'}>
 				<Container>
 					<Content>
-						<LogoLink dark={dark} to="/">
+						<LogoLink dark={dark ? 'true' : 'false'} to="/">
 							<LogoImg src={ dark ? LogoDark as string : Logo as string} alt="logo"/>
               Envoys Vision
 						</LogoLink>
@@ -82,9 +82,9 @@ const Header: React.FC<Props> = ({langActive, setLangActive}) => {
 							setBurger(a => !a);
 						}}>
 							{burger ? (
-								<BurgerImageActive dark={dark}/>
+								<BurgerImageActive dark={dark ? 'true' : 'false'}/>
 							) : (
-								<BurgerImage dark={dark}/>
+								<BurgerImage dark={dark ? 'true' : 'false'}/>
 							)
 							}
 						</BurgerButton>

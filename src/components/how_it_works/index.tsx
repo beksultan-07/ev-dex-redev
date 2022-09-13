@@ -21,7 +21,7 @@ const Image = styled.img`
 
 const HowItWorks: React.FC = () => (
 	<>
-		<Wrap bg={false}>
+		<Wrap bg={false} id="how-it-works">
 			<Container>
 				<Title textAlign={false}>Как это работает</Title>
 				<Desc>Майнинг ликвидности, торговля с помощью пулов или классической книги ордеров!</Desc>

@@ -10,6 +10,8 @@ const GlobalStyles = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+
   }
   body,
   h1,
@@ -30,7 +32,6 @@ const GlobalStyles = createGlobalStyle`
   body{
     font-family: "Roboto", sans-serif;
     min-height: 100vh;
-    scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
   }

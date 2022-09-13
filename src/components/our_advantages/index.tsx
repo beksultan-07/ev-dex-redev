@@ -31,33 +31,18 @@ const Item = styled.div`
   transition: .3s ease-in-out;
   position: relative;
   cursor: pointer;
-
   :hover {
     border: 2px solid #F9F9F9;
     box-shadow: 0px 64px 194px rgba(0, 0, 0, 0.05);
     border-radius: 22px;
   }
-
-  :after {
-    content: '';
-    width: 0;
-    height: 5px;
-    display: block;
-    background: #F48020;
-    border-radius: 7px;
-    position: absolute;
-    bottom: 30px;
-    transition: .3s;
-    right: 0;
-  }
-
-  :hover {
-    :after {
+	:hover .line{
+    :after{
       left: 0;
       right: auto;
       width: 100%;
     }
-  }
+	}
 `;
 const Num = styled.h1`
   position: absolute;
@@ -103,6 +88,25 @@ const IconWrap = styled.div`
   max-width: 64px;
 `;
 const Icon = styled.img``;
+const Line = styled.div`
+	width: 165px;
+  position: absolute;
+	bottom: 30px;
+	left: 30px;
+		:after{
+			content: '';
+	    width: 0;
+	    height: 5px;
+	    display: block;
+	    background: #F48020;
+	    border-radius: 7px;
+	    position: absolute;
+			bottom: 0;
+	    transition: .3s;
+	    right: 0;
+		}
+`;
+
 type ItemType = {
 	icon: string;
 	title: string;
@@ -132,7 +136,7 @@ const OurAdvantages: React.FC = () => {
 	];
 	return (
 		<>
-			<Wrap bg={false}>
+			<Wrap bg={false} id="our-advantages">
 				<Container maxWidth={'1186px'}>
 					<Title indentBottom={'120px'} textAlign={true}>Наши преимущества</Title>
 					<Content>
@@ -147,6 +151,7 @@ const OurAdvantages: React.FC = () => {
 										<ItemTitle>{item.title}</ItemTitle>
 										<Desc>{item.desc}</Desc>
 									</TextBlock>
+									<Line className="line"></Line>
 								</Item>
 							</Column>
 						))}

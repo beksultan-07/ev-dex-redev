@@ -77,7 +77,7 @@ const Partners: React.FC = () => {
 	];
 	return (
 		<>
-			<Wrap>
+			<Wrap id="partners">
 				<Container>
 					<Title textAlign={true} color={'#0F2B46'}>Наши компании и партнёры</Title>
 					<Text>The tools and resources to augment your project to the next level</Text>

@@ -72,11 +72,11 @@ type Props = {
 
 const HeaderNavbar: React.FC<Props> = ({burger, langActive, setLangActive, dark}) => {
 	const [links] = React.useState([
-		{id: 1, text: 'Наши преймущества', href: '#'},
-		{id: 2, text: 'Факты', href: '#'},
-		{id: 3, text: 'Как это работает', href: '#'},
-		{id: 4, text: 'Документы', href: '#'},
-		{id: 5, text: 'Партнёры', href: '#'},
+		{id: 1, text: 'Наши преймущества', href: '#our-advantages'},
+		{id: 2, text: 'Факты', href: '#facts'},
+		{id: 3, text: 'Как это работает', href: '#how-it-works'},
+		{id: 4, text: 'Документы', href: '#documents'},
+		{id: 5, text: 'Партнёры', href: '#partners'},
 	]);
 
 	return (
