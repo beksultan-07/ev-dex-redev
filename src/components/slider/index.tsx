@@ -201,6 +201,7 @@ const Buttons = styled.div`
 		gap: 15px;
 		a{
 			font-size: 10px;
+			padding: 12px 20px;
 		}
 	}
 `;

@@ -138,7 +138,7 @@ const OurAdvantages: React.FC = () => {
 		<>
 			<Wrap bg={false} id="our-advantages">
 				<Container maxWidth={'1186px'}>
-					<Title indentBottom={'120px'} textAlign={true}>Наши преимущества</Title>
+					<Title top="70px" indentBottom={'120px'} textAlign={true}>Наши преимущества</Title>
 					<Content>
 						{items.map((item, index) => (
 							<Column key={index}>

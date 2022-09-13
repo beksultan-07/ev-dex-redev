@@ -60,6 +60,7 @@ type TitleProps = {
 	textAlign: boolean;
 	indentBottom?: string;
 	color?: string;
+	top?: string;
 };
 export const Title = styled.h1<TitleProps>`
   font-family: 'Exo 2';
@@ -69,6 +70,7 @@ export const Title = styled.h1<TitleProps>`
   color: ${props => props.color ?? '#133D65'};
   text-align: ${props => props.textAlign ? 'center' : 'none'};
   margin-bottom: ${props => props.indentBottom ?? '20px'};
+	padding-top: ${props => props.top ?? '0'};
   @media (max-width: 1070px) {
     text-align: center;
   }
