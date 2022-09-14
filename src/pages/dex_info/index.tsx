@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import DexTop from '../../components/dex_info/dex_top';
 import styled from 'styled-components';
 import DexBottom from '../../components/dex_info/dex_bottom';
@@ -22,17 +22,25 @@ const Wrap = styled.section`
     padding-top: 130px;
   }
 `;
-
-const DexInfo: React.FC = () => (
-	<>
-		<Wrap>
-			<Container>
-				<DexTop/>
-				<DexBottom/>
-				<Request/>
-			</Container>
-		</Wrap>
-	</>
-);
+type Props = {
+	dark: boolean;
+	setDark: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const DexInfo: React.FC<Props> = ({dark, setDark}) => {
+	useEffect(() => {
+		setDark(true);
+	}, [setDark]);
+	return (
+		<>
+			<Wrap>
+				<Container>
+					<DexTop/>
+					<DexBottom/>
+					<Request/>
+				</Container>
+			</Wrap>
+		</>
+	);
+};
 
 export default DexInfo;

@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import Header from '../header';
 import Footer from '../footer';
 
-type Props = {
-	children: any;
-};
 const LayoutWrap = styled.div`
   min-height: 100vh;
   display: flex;
@@ -16,7 +13,13 @@ const LayoutWrap = styled.div`
 const LayoutInside = styled.div`
   flex: 1 1 auto;
 `;
-const Layout: React.FC<Props> = props => {
+type Props = {
+	children: any;
+	dark: boolean;
+	setDark: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Layout: React.FC<Props> = ({dark, setDark, children}) => {
 	const [langActive, setLangActive] = React.useState(false);
 
 	return (
@@ -24,14 +27,13 @@ const Layout: React.FC<Props> = props => {
 			<LayoutWrap onClick={() => {
 				setLangActive(false);
 			}}>
-				<Header langActive={langActive} setLangActive={setLangActive}/>
+				<Header dark={dark} setDark={setDark} langActive={langActive} setLangActive={setLangActive}/>
 				<LayoutInside>
-					{props.children}
+					{children}
 				</LayoutInside>
 				<Footer/>
 			</LayoutWrap>
 		</>
-
 	);
 };
 

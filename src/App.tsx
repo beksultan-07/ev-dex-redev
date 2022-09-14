@@ -5,15 +5,18 @@ import Layout from './components/layout';
 import Home from './pages/home';
 import DexInfo from './pages/dex_info';
 
-const App: React.FC = () => (
-	<>
-		<Layout>
-			<Routes>
-				<Route path="/" element={<Home/>}/>
-				<Route path="/dex-info" element={<DexInfo/>}/>
-			</Routes>
-		</Layout>
-	</>
-);
+const App: React.FC = () => {
+	const [dark, setDark] = React.useState(false);
+	return (
+		<>
+			<Layout dark={dark} setDark={setDark}>
+				<Routes>
+					<Route path="/" element={<Home dark={dark} setDark={setDark}/>}/>
+					<Route path="/dex-info" element={<DexInfo dark={dark} setDark={setDark}/>}/>
+				</Routes>
+			</Layout>
+		</>
+	);
+};
 
 export default App;

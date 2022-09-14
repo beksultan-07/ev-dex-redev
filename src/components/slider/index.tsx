@@ -29,42 +29,6 @@ const SwiperWrap = styled.section`
 	@media(max-width: 992px){
 		display: none;
 	}
-
-  .swiper-scrollbar {
-    border-radius: 15px;
-    position: relative;
-    -ms-touch-action: none;
-    background: #ffff;
-  }
-
-  .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 60px;
-    z-index: 50;
-    height: 4px;
-    width: 140px;
-  }
-
-  .swiper-scrollbar-drag {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    background: #b1adb3;
-    border-radius: 10px;
-    left: 0;
-    top: 0;
-  }
-
-  .swiper-scrollbar-cursor-drag {
-    cursor: move;
-  }
-
-  .swiper-scrollbar-lock {
-    display: none;
-  }
-
   .swiper-button-next, .swiper-button-prev {
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0px 4px 4px rgba(189, 189, 189, 0.15);
@@ -75,23 +39,19 @@ const SwiperWrap = styled.section`
     background-position: center;
     background-repeat: no-repeat;
     transition: .3s ease-in-out;
-
     :hover {
       background-color: rgba(255, 255, 255, 0.70);
       box-shadow: 0px 0px 25px rgba(189, 189, 189, .70);
     }
   }
-
   .swiper-button-prev {
     transform: rotate(180deg);
     left: 135px;
     box-shadow: 0px -4px 4px rgba(189, 189, 189, 0.15);
-
     :hover {
       box-shadow: 0px 0px 25px rgba(189, 189, 189, .70);
     }
   }
-
   .swiper-button-next {
     right: 135px;
   }
@@ -111,8 +71,6 @@ const SwiperWrap = styled.section`
 	    left: 20px;
 	  }
 	}
-	
-
   .swiper-button-disabled {
     opacity: .30;
 
@@ -121,6 +79,31 @@ const SwiperWrap = styled.section`
       box-shadow: 0px 4px 4px rgba(189, 189, 189, .15);
     }
   }
+`;
+type FillbarSliderType = {
+	width: number;
+};
+const FillBarBlock = styled.div`
+  border-radius: 15px;
+  -ms-touch-action: none;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 4px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  z-index: 3;
+`;
+const FillBar = styled.span<FillbarSliderType>`
+  display: block;
+  min-width: 20px;
+  width: ${props => `${props.width}%`};
+  height: 100%;
+  background: #b1adb3;
+  border-radius: 15px;
+  transition: .2s linear;
 `;
 type SlideProps = {
 	bg?: string;
@@ -294,12 +277,16 @@ const Slider: React.FC = () => {
 			unvisible: true,
 		},
 	];
+	const [slideIndex, setSlideIndex] = React.useState<number>(0);
 
 	return (
 		<>
 			<SwiperWrap id="facts">
 				<Swiper
 					spaceBetween={30}
+					onSlideChange={e => {
+						setSlideIndex(e.activeIndex);
+					}}
 					effect={'fade'}
 					navigation={true}
 					scrollbar={{
@@ -327,6 +314,9 @@ const Slider: React.FC = () => {
 							</Slide>
 						</SwiperSlide>
 					))}
+					<FillBarBlock>
+						<FillBar width={slideIndex / (slides.length - 1) * 100}></FillBar>
+					</FillBarBlock>
 				</Swiper>
 			</SwiperWrap>
 

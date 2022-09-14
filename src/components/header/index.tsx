@@ -63,10 +63,11 @@ const BurgerImageActive = styled(BurgerActive)<HeaderProps>`
 type Props = {
 	langActive: boolean;
 	setLangActive: React.Dispatch<React.SetStateAction<boolean>>;
+	dark: boolean;
+	setDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Header: React.FC<Props> = ({langActive, setLangActive}) => {
+const Header: React.FC<Props> = ({langActive, setLangActive, dark}) => {
 	const [burger, setBurger] = React.useState(false);
-	const [dark, setDark] = React.useState(false);
 
 	return (
 		<>
