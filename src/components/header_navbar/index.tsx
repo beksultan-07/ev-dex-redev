@@ -65,12 +65,10 @@ const Button = styled.a`
 `;
 type Props = {
 	burger: boolean;
-	langActive: boolean;
-	setLangActive: React.Dispatch<React.SetStateAction<boolean>>;
 	dark: boolean;
 };
 
-const HeaderNavbar: React.FC<Props> = ({burger, langActive, setLangActive, dark}) => {
+const HeaderNavbar: React.FC<Props> = ({burger, dark}) => {
 	const [links] = React.useState([
 		{id: 1, text: 'Наши преймущества', href: '#our-advantages'},
 		{id: 2, text: 'Факты', href: '#facts'},
@@ -84,7 +82,7 @@ const HeaderNavbar: React.FC<Props> = ({burger, langActive, setLangActive, dark}
 			<NavbarBlock dark={dark} active={burger}>
 				{links.map(link => (<Link dark={dark} key={link.id} href={link.href} active={false}>{link.text}</Link>))}
 				<Button href="https://app.envoys.vision/swap" target="_blank">Перейти в APP</Button>
-				<HeaderLang dark={dark} langActive={langActive} setLangActive={setLangActive}/>
+				<HeaderLang dark={dark}/>
 			</NavbarBlock>
 		</>
 	);

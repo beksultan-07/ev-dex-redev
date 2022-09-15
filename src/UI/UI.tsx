@@ -78,4 +78,3 @@ export const Title = styled.h1<TitleProps>`
     font-size: 26px;
   }
 `;
-
