@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import HeaderLang from '../header_lang';
 import styled from 'styled-components';
+import {useTranslation} from 'react-i18next';
 
 type BurgerProps = {
 	active: boolean;
@@ -69,19 +70,28 @@ type Props = {
 };
 
 const HeaderNavbar: React.FC<Props> = ({burger, dark}) => {
-	const [links] = React.useState([
-		{id: 1, text: 'Наши преймущества', href: '#our-advantages'},
-		{id: 2, text: 'Факты', href: '#facts'},
-		{id: 3, text: 'Как это работает', href: '#how-it-works'},
-		{id: 4, text: 'Документы', href: '#documents'},
-		{id: 5, text: 'Партнёры', href: '#partners'},
+	const {t} = useTranslation();
+
+	const [links, setLinks] = React.useState([
+		{id: 1, text: t('header.link1'), href: ''},
 	]);
+
+	React.useEffect(() => {
+		setLinks([
+			{id: 1, text: t('header.link1'), href: '#our-advantages'},
+			{id: 2, text: t('header.link2'), href: '#facts'},
+			{id: 3, text: t('header.link3'), href: '#how-it-works'},
+			{id: 4, text: t('header.link4'), href: '#documents'},
+			{id: 5, text: t('header.link5'), href: '#partners'},
+
+		]);
+	}, [t]);
 
 	return (
 		<>
 			<NavbarBlock dark={dark} active={burger}>
 				{links.map(link => (<Link dark={dark} key={link.id} href={link.href} active={false}>{link.text}</Link>))}
-				<Button href="https://app.envoys.vision/swap" target="_blank">Перейти в APP</Button>
+				<Button href="https://app.envoys.vision/swap">{t('header.link6')}</Button>
 				<HeaderLang dark={dark}/>
 			</NavbarBlock>
 		</>

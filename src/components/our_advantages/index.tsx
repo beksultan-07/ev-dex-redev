@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container, Title, Wrap} from '../../UI/UI';
 import styled from 'styled-components';
 import Icon1 from '../../assets/our_advantages/icon1.svg';
 import Icon2 from '../../assets/our_advantages/icon2.svg';
 import Icon3 from '../../assets/our_advantages/icon3.svg';
+import {useTranslation} from 'react-i18next';
 
 const Content = styled.div`
   display: flex;
@@ -116,31 +117,46 @@ type ItemType = {
 	desc: string;
 };
 const OurAdvantages: React.FC = () => {
-	const items: ItemType[] = [
+	const [t] = useTranslation();
+	const [items, setItems] = useState<ItemType[]>([
 		{
-			title: 'Пополнение через банк',
-			desc: 'Ввод средств в фиатных валютах. Пополнение в евро (EUR), долларах США (USD) и других фиатных валютах с минимальными комиссиями.',
+			title: '',
+			desc: '',
 			icon: Icon1 as string,
 			num: 1,
 		},
-		{
-			title: 'Токенизируй свою компанию',
-			desc: 'Легкий вход в Blockchain индустрию для компаний классических секторов экономики. Токенизация компаний любых уровней. ',
-			icon: Icon2 as string,
-			num: 2,
-		},
-		{
-			title: 'Поддержка Государства',
-			desc: 'Ввод средств в фиатных валютах. Пополнение в евро (EUR), долларах США (USD) и других фиатных валютах с минимальными комиссиями.',
-			icon: Icon3 as string,
-			num: 3,
-		},
-	];
+	]);
+
+	useEffect(() => {
+		setItems([
+			{
+				title: t('home.advantages2.values.option1.title'),
+				desc: t('home.advantages2.values.option2.text'),
+				icon: Icon1 as string,
+				num: 1,
+			},
+			{
+				title: t('home.advantages2.values.option2.title'),
+				desc: t('home.advantages2.values.option2.text'),
+				icon: Icon2 as string,
+				num: 2,
+			},
+			{
+				title: t('home.advantages2.values.option3.title'),
+				desc: t('home.advantages2.values.option3.text'),
+				icon: Icon3 as string,
+				num: 3,
+			},
+		]);
+	}, [t]);
+
 	return (
 		<>
 			<Wrap bg={false} id="our-advantages">
 				<Container maxWidth={'1186px'}>
-					<Title top="70px" indentBottom={'120px'} textAlign={true}>Наши преимущества</Title>
+					<Title top="70px" indentBottom={'120px'} textAlign={true}>
+						{t('home.advantages2.title')}
+					</Title>
 					<Content>
 						{items.map((item, index) => (
 							<Column key={index}>

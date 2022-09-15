@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import CountUp from 'react-countup';
 
@@ -8,6 +8,7 @@ import LikeIcon from '../../assets/advantage/icon2.svg';
 import SafeIcon from '../../assets/advantage/icon3.svg';
 import CaseIcon from '../../assets/advantage/icon4.svg';
 import {Wrap} from '../../UI/UI';
+import {useTranslation} from 'react-i18next';
 
 const Background = styled.div`
   background: url(${BackgroundImg}) 0 0 / cover;
@@ -82,12 +83,12 @@ type ItemType = {
 };
 
 const Advantage: React.FC = () => {
-	const items: ItemType[] = [
-		{img: DollarIcon as string, text: 'Низкие комиссии!', num: 0.1, numType: 'percent'},
-		{img: SafeIcon as string, text: 'Total value locked', num: 625347594, numType: 'sum'},
-		{img: LikeIcon as string, text: 'Нам доверяют', num: 1329113, numType: ''},
-		{img: CaseIcon as string, text: 'Total trading volume', num: 41600342591, numType: 'sum'},
-	];
+	const [t] = useTranslation();
+
+	const [items, setItems] = useState<ItemType[]>([
+		{img: DollarIcon as string, text: '', num: 0.1, numType: 'percent'},
+	]);
+
 	const [animCount, setAnimCount] = React.useState(false);
 
 	const ref = React.useRef(null);
@@ -105,6 +106,17 @@ const Advantage: React.FC = () => {
 			observer.observe(ref.current);
 		}
 	}, [ref]);
+
+	useEffect(() => {
+		setItems(
+			[
+				{img: DollarIcon as string, text: t('home.advantages1.option1'), num: 0.1, numType: 'percent'},
+				{img: SafeIcon as string, text: t('home.advantages1.option2'), num: 625347594, numType: 'sum'},
+				{img: LikeIcon as string, text: t('home.advantages1.option3'), num: 1329113, numType: ''},
+				{img: CaseIcon as string, text: t('home.advantages1.option4'), num: 41600342591, numType: 'sum'},
+			],
+		);
+	}, [t]);
 
 	return (
 		<>

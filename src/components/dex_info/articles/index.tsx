@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useTranslation} from 'react-i18next';
 import styled from 'styled-components';
 
 const Wrap = styled.div`
@@ -44,21 +45,30 @@ const LinksLink = styled.a`
 `;
 
 const Articles: React.FC = () => {
-	const links = [
-		{href: '#', text: 'Что такое DEX биржа ?', disable: false},
-		{href: '#farming', text: 'Что такое фарминг ?', disable: false},
-		{href: '#tokenized-assets', text: 'Токенизированные компании', disable: false},
-		{href: '#launchpad', text: 'Что такое Launchpad ?', disable: false},
-		{href: '#IDO', text: 'Что такое IDO ?', disable: false},
-		{href: '#STO', text: 'Что такое STO ?', disable: false},
-		{href: '#', text: 'Кошелек Envoys Vision ', disable: true},
-		{href: '#', text: 'Криптокредиты и “Landing” криптовалюты', disable: true},
-	];
+	const [links, setLinks] = useState([
+		{href: '#', text: '', disable: false},
+	]);
+
+	const [t] = useTranslation();
+
+	useEffect(() => {
+		setLinks([
+			{href: '#', text: t('dexInfo.nav.link1'), disable: false},
+			{href: '#farming', text: t('dexInfo.nav.link2'), disable: false},
+			{href: '#tokenized-assets', text: t('dexInfo.nav.link3'), disable: false},
+			{href: '#launchpad', text: t('dexInfo.nav.link4'), disable: false},
+			{href: '#IDO', text: t('dexInfo.nav.link5'), disable: false},
+			{href: '#STO', text: t('dexInfo.nav.link6'), disable: false},
+			{href: '#', text: t('dexInfo.nav.link7'), disable: true},
+			{href: '#', text: t('dexInfo.nav.link8'), disable: true},
+		]);
+	}, [t]);
+
 	return (
 		<>
 			<Wrap>
 				<Content>
-					<Title>Статьи в этом разделе</Title>
+					<Title>{t('dexInfo.nav.title')}</Title>
 					<LinksList>
 						{links.map((link, index) => (
 							<LinksItem key={index}>

@@ -14,7 +14,7 @@ void i18n
 			order: ['localStorage', 'cookies'],
 			caches: ['localStorage', 'cookies'],
 		},
-		fallbackLng: 'ru',
+		fallbackLng: 'en',
 		interpolation: {escapeValue: false},
 	});
 

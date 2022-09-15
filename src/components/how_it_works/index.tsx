@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import HowItWorksImg from '../../assets/how_it_works/howItWorks.svg';
+import HowItWorksRuImg from '../../assets/how_it_works/howItWorksRu.svg';
+
 import Swipe from '../../assets/how_it_works/swipe.svg';
 import {Container, Title, Wrap} from '../../UI/UI';
 import styled from 'styled-components';
+import {useTranslation} from 'react-i18next';
 
 const Content = styled.div`
 	padding: 70px 0;
@@ -47,23 +50,45 @@ const SwipeIcon = styled.img`
 	}
 `;
 
-const HowItWorks: React.FC = () => (
-	<>
-		<Wrap bg={false} id="how-it-works">
-			<Container>
-				<Content>
-					<Title textAlign={false}>Как это работает</Title>
-					<Desc>Майнинг ликвидности, торговля с помощью пулов или классической книги ордеров!</Desc>
-					<ImageScroll>
-						<ImageBlock>
-							<Image src={HowItWorksImg as string} alt={HowItWorksImg as string}/>
-						</ImageBlock>
-					</ImageScroll>
-					<SwipeIcon src={Swipe as string} alt={Swipe as string}/>
-				</Content>
-			</Container>
-		</Wrap>
-	</>
-);
+const HowItWorks: React.FC = () => {
+	const [t, i18n] = useTranslation();
+	const [image, setImage] = useState(HowItWorksImg as string);
+
+	useEffect(() => {
+		switch (i18n.language) {
+			case 'ru':
+				setImage(HowItWorksRuImg as string);
+				break;
+			case 'en':
+				setImage(HowItWorksImg as string);
+				break;
+			default:
+				break;
+		}
+	}, [t]);
+
+	return (
+		<>
+			<Wrap bg={false} id="how-it-works">
+				<Container>
+					<Content>
+						<Title textAlign={false}>
+							{t('home.howItworkds.title')}
+						</Title>
+						<Desc>
+							{t('home.howItworkds.text')}
+						</Desc>
+						<ImageScroll>
+							<ImageBlock>
+								<Image src={image} alt={HowItWorksImg as string}/>
+							</ImageBlock>
+						</ImageScroll>
+						<SwipeIcon src={Swipe as string} alt={Swipe as string}/>
+					</Content>
+				</Container>
+			</Wrap>
+		</>
+	);
+};
 
 export default HowItWorks;

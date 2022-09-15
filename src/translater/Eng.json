@@ -3,9 +3,9 @@
     "link1": "Our advantages",
     "link2": "Facts",
     "link3": "How it works",
-    "link5": "Documents",
-    "link6": "Partners",
-    "link7": "Go to APP"
+    "link4": "Documents",
+    "link5": "Partners",
+    "link6": "Go to APP"
   },
   "footer": {
     "title": "Join the community",
@@ -85,7 +85,8 @@
         "btn2": "Learn more"
       },
       "slide2": {
-        "title": "Exchange",
+        "title": "DEX",
+        "title2": "Exchange",
         "text": "Purchase and sale of cryptocurrencies and tokenized assets. Safe, fast, liquid!",
         "btn1": "Start trading",
         "btn2": "Learn more"
@@ -129,10 +130,13 @@
     }
   },
   "dexInfo": {
+    "question": {
+      "text": "Any more questions? ",
+      "text2": "Submit request"
+    },
     "dex": {
       "title": "What is a DEX exchange?",
       "text": "A decentralized exchange (DEX) is an exchange that operates on the basis of a distributed ledger, does not store user funds and personal data on its servers, and acts only as a platform for matching requests for the purchase or sale of user assets. Trading on such platforms takes place directly between participants (peer-to-peer) without any financial intermediaries.",
-      "question": "Any more questions? Submit a request",
       "block": {
         "title": "What are the main benefits of Envoys Vision DEX?",
         "text1": "Envoys Vision DEX combines all the advantages of decentralized exchanges, but at the same time opens up the possibility for users to trade in tokenized shares and other securities.",
@@ -158,7 +162,6 @@
     "farming": {
       "title": "What is farming ?",
       "text": "Cryptocurrency farming (profitable farming) is an important aspect of the DeFi concept. The first step in profitable farming involves adding funds to the liquidity pool. The liquidity pool is a smart contract in which the user's funds are blocked. These pools provide a market (liquidity) where other users can exchange their cryptocurrencies, borrow or lend their tokens. After adding funds to the liquidity pool, the user officially becomes a liquidity provider. In exchange for blocking tokens in the pool, the liquidity provider receives a reward. Rewards are accrued around the clock and are usually paid in the form of tokens. The collected tokens can be invested back into the liquidity pool and added to the farm to receive larger rewards. They can also be withdrawn and converted into cash.",
-      "question": "Any more questions? Submit a request",
       "block": {
         "title": "What are the differences in staking ?",
         "text1": "\"Staking\" and \"yield farming\" on DeFi networks allow you to receive passive income. DeFi is a general term for decentralized finance or decentralized financial services for currencies and smart contracts built on blockchain.",
@@ -168,13 +171,75 @@
         "text4": "Tokens offering such high interest rates and profit from commissions are more likely to drop significantly in price if the main token falls sharply in price. This is called \"impermanent loss\". Even if the commissions brought good earnings, the market value of tokens may decrease, devaluing investments in the farm."
       }
     },
+    "tokenized-assets": {
+      "title": "What are the benefits of tokenized assets?",
+      "block": {
+        "text1": "- Tokenized assets minimize the role of the depository, reducing its obligations to holding security real shares.",
+        "text2": "- Allows you to buy fractional parts of securities.",
+        "text3": "- Trading tokenized assets is much faster and more technologically advanced thanks to the use of blockchain.",
+        "text4": "- An advantage that investors can enjoy is that they don't need a brokerage account to buy assets.",
+        "text5": "- Unlike volatile cryptocurrencies, which can quickly rise in price and just as rapidly fall in price, tokenized assets are considered more reliable, as they are characterized by material rights.",
+        "text6": "- Thanks to the blockchain, the regulator will be able to track all transactions, and smart contracts are able to determine the identity of the buyer, the time of the transaction, the scheme for distributing income or paying dividends. This increases the transparency of transactions.",
+        "text7": "- When buying tokenized assets, you can use both regular money (fiat) and cryptocurrencies. The absence of infrastructure barriers and costs gives traders opportunities that were previously available only to institutional investors.",
+        "text8": "- Tokenization is well suited for low-liquid assets like art and real estate. Such high-value assets can be split into tens, hundreds or thousands of low-value tokens, which will increase their liquidity and availability for investors.",
+        "text9": "- The tokenization procedure is called “STO” - it is a faster and cheaper analogue of an IPO. Listing costs are reduced due to the absence of the need to involve intermediaries like investment banks. Audit and underwriting procedures for blockchain projects are also easier. And participating in STO almost any private investor can.",
+        "text10": "- Cryptoactive helps the company to get financing, and interested investors - a digital tool that allows them to make a profit."
+      }
+    },
+    "launchpad": {
+      "title": "What is Launchpad ?",
+      "block": {
+        "text1": "Launchpad or platform launchpad is a system where companies and crypto projects can raise capital with subsequent listing on the exchange. It also helps in creating crypto communities that unite developers and potential investors. Creators receive the financial resources necessary for further work , and investors - early access to the new product, which, in the future, has a high profit potential.",
+        "text2": "Companies wishing to be listed must also meet the following minimum requirements:",
+        "text3": "- Relatively mature project development stage",
+        "text4": "- Ready for mass adoption",
+        "text5": "- Strong and purposeful team",
+        "text6": "- Potential for growth and development",
+        "text7": "- Tokenization is well suited for low-liquid assets like art and real estate. Such high-value assets can be split into tens, hundreds or thousands of low-cost tokens, which will increase their liquidity and availability for investors.",
+        "text8": "- The tokenization procedure is called “STO” - it is a faster and cheaper analogue of an IPO. Listing costs are reduced due to the absence of the need to involve intermediaries like investment banks. Audit and underwriting procedures for blockchain projects are also easier. And participating in STO almost any private investor can.",
+        "text9": "- Cryptoactive helps the company to get financing, and interested investors - a digital tool that allows them to make a profit."
+      }
+    },
+    "IDO": {
+      "title": "What is IDO?",
+      "block": {
+        "text1": "Initial DEX Offering, or IDO (Initial Decentralized Offering) is a token launch model that involves raising funds on a decentralized exchange.",
+        "text2": "IDO Features:",
+        "text3": "1) Funds are raised by selling tokens on cryptocurrency exchanges.",
+        "text4": "2) Both the project team and the DEX platform deal with marketing and advertising.",
+        "text5": "3) Listing of tokens starts almost immediately after the IDO. At the same time, there are no restrictions for token trading on other platforms.",
+        "text6": "4) Blockchain technology ensures the anonymity and security of every transaction.",
+        "text7": "5) The issuer and the trader only pay for the launch of smart contracts.",
+        "text8": "6) There is no regulatory body as such.",
+        "text9": "7) The cryptocurrency exchange is responsible for verifying the issuer.",
+        "text10": "8) The user is responsible for the safety of funds, since the exchange does not have access to wallets.",
+        "text11": "9) The exchange is auditing the project.",
+        "text12": "It turns out that in order to launch IDO, you will need to register on the exchange, activate the corresponding smart contact, register the token. There is separate information for developers, separately for investors. In order for your own token to appear on the exchange, you will need:",
+        "text13": "- Pass the preparatory stage - describe the future project;",
+        "text14": "send the product for review and testing to the research department of the exchange;",
+        "text15": "- Carry out a pre-sale;",
+        "text16": "- Run a public sale.",
+        "text17": "Only after this will the listing of tokens be launched. In addition, there may be liquidity stimulation, when you can get rewarded in crypto for performing specific actions that draw attention to the virtual asset."
+      }
+    },
+    "STO": {
+      "title": "What is STO ?",
+      "block": {
+        "text1": "Security token offerings are digital equivalents of securities. Such tokens are financial instruments that have monetary value and are part of property or part of a company.",
+        "text2": "Security tokens are not traded on regular exchanges. Exchanges that offer the ability to trade these tokens must fully comply with the rules, for example, conduct investigations of token lists and exchange of received data, as well as register all investors. Thus, security -tokens 'live' on specialized exchanges."
+      }
+    },
+
     "nav": {
       "title": "Articles in this section",
       "link1": "What is a DEX exchange?",
       "link2": "What is farming?",
-      "link3": "Tokenized companies",
-      "link4": "Envoys Vision Wallet",
-      "link5": "Crypto Loans and Cryptocurrency Landing"
+      "link3": "Tokenized Companies",
+      "link4": "What is Launchpad ?",
+      "link5": "What is IDO ?",
+      "link6": "What is STO?",
+      "link7": "Envoys Vision Wallet",
+      "link8": "Crypto Loans and Cryptocurrency Landing"
     },
     "request": {
       "title": "Still need our help?",

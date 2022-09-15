@@ -140,7 +140,7 @@ const HeaderLang: React.FC<Props> = ({dark}) => {
 						e.stopPropagation();
 						setLangActive(val => !val);
 					}}>
-          
+
 						<WebIcon dark={dark ? 'true' : 'false'}/>
 						<ArrowIcon dark={dark ? 'true' : 'false'} rotate={langActive ? 'true' : 'false'}/>
 					</Button>
