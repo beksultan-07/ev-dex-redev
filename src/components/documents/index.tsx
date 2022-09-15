@@ -21,9 +21,13 @@ const Wrap = styled.section`
   height: 100%;
   display: flex;
   align-items: center;
-  position: relative;
+`;
+const Content = styled.div`
+	width: 100%;
+	min-height: 560px;
   background: #111A23;
-	padding: 70px 0;
+  padding: 70px 0;
+  position: relative;
   ::before, ::after {
     content: "";
     display: block;
@@ -134,65 +138,68 @@ const Documents: React.FC = () => {
 	return (
 		<>
 			<Wrap id="documents">
-				<Container>
-					<Title indentBottom={'90px'} textAlign={true} color={'#fff'}>Документы</Title>
-					<SwiperWrap>
-						<Swiper
-							centeredSlides={true}
-							autoplay={{
-								delay: 3000,
-								disableOnInteraction: false,
-								pauseOnMouseEnter: true,
-							}}
-							slidesPerView="auto"
-							speed={2000}
-							spaceBetween={30}
-							loop
-							breakpoints={{
-								// eslint-disable-next-line @typescript-eslint/naming-convention
-								320: {
-									slidesPerView: 1,
-									speed: 300,
-								},
-								// eslint-disable-next-line @typescript-eslint/naming-convention
-								420: {
-									slidesPerView: 2,
-								},
-								// eslint-disable-next-line @typescript-eslint/naming-convention
-								620: {
-									slidesPerView: 4,
-								},
-								// eslint-disable-next-line @typescript-eslint/naming-convention
-								780: {
-									slidesPerView: 5,
-								},
-								// eslint-disable-next-line @typescript-eslint/naming-convention
-								900: {
-									slidesPerView: 6,
-								},
-								// eslint-disable-next-line @typescript-eslint/naming-convention
-								1100: {
-									slidesPerView: 7,
-								},
-							}}
-							modules={[Autoplay]}
-							className="mySwiper"
-						>
-							{docs.map((doc, index) => (
-								<SwiperSlide key={index}>
-									<Item>
-										<ItemTitle>{doc.title}</ItemTitle>
-										<Image src={doc.img} alt={doc.img}/>
-										<Button href={doc.link}>
-											<Icon src={DownloadIcon as string} alt={DownloadIcon as string}/>
-											<ButtonText>Скачать</ButtonText>
-										</Button>
-									</Item>
-								</SwiperSlide>
-							))}
-						</Swiper>
-					</SwiperWrap>
-				</Container>
+				<Content>
+
+					<Container>
+						<Title indentBottom={'90px'} textAlign={true} color={'#fff'}>Документы</Title>
+						<SwiperWrap>
+							<Swiper
+								centeredSlides={true}
+								autoplay={{
+									delay: 3000,
+									disableOnInteraction: false,
+									pauseOnMouseEnter: true,
+								}}
+								slidesPerView="auto"
+								speed={2000}
+								spaceBetween={30}
+								loop
+								breakpoints={{
+									// eslint-disable-next-line @typescript-eslint/naming-convention
+									320: {
+										slidesPerView: 1,
+										speed: 300,
+									},
+									// eslint-disable-next-line @typescript-eslint/naming-convention
+									420: {
+										slidesPerView: 2,
+									},
+									// eslint-disable-next-line @typescript-eslint/naming-convention
+									620: {
+										slidesPerView: 4,
+									},
+									// eslint-disable-next-line @typescript-eslint/naming-convention
+									780: {
+										slidesPerView: 5,
+									},
+									// eslint-disable-next-line @typescript-eslint/naming-convention
+									900: {
+										slidesPerView: 6,
+									},
+									// eslint-disable-next-line @typescript-eslint/naming-convention
+									1100: {
+										slidesPerView: 7,
+									},
+								}}
+								modules={[Autoplay]}
+								className="mySwiper"
+							>
+								{docs.map((doc, index) => (
+									<SwiperSlide key={index}>
+										<Item>
+											<ItemTitle>{doc.title}</ItemTitle>
+											<Image src={doc.img} alt={doc.img}/>
+											<Button href={doc.link}>
+												<Icon src={DownloadIcon as string} alt={DownloadIcon as string}/>
+												<ButtonText>Скачать</ButtonText>
+											</Button>
+										</Item>
+									</SwiperSlide>
+								))}
+							</Swiper>
+						</SwiperWrap>
+					</Container>
+				</Content>
 			</Wrap>
 		</>
 	);

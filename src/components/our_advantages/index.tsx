@@ -8,6 +8,7 @@ import Icon3 from '../../assets/our_advantages/icon3.svg';
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   @media (max-width: 895px) {
     flex-wrap: wrap;
     justify-content: center;
@@ -15,8 +16,7 @@ const Content = styled.div`
   }
 `;
 const Column = styled.div`
-  flex: 0 1 350px;
-  padding: 0 10px;
+  flex: 0 1 360px;
   position: relative;
 `;
 const Item = styled.div`
@@ -65,7 +65,8 @@ const ItemTitle = styled.h4`
   font-weight: 800;
   font-size: 20px;
   color: #0F2B46;
-  margin: 24px 0 11px;
+  line-height: calc(30 / 20 * 100%);
+  margin: 25px 0 10px;
   z-index: 2;
   @media (max-width: 475px) {
     font-size: 16px;

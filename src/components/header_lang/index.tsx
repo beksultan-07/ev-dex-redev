@@ -125,16 +125,17 @@ type Props = {
 const HeaderLang: React.FC<Props> = ({langActive, setLangActive, dark}) => {
 	useEffect(() => {
 		console.log(langActive);
-	}, []);
+	}, [langActive]);
+	const toggle = () => {
+		setLangActive(!langActive);
+	};
 
 	return (
 		<>
 			<Wrap>
 				<Content>
 					<Text dark={dark ? 'true' : 'false'}> Русский </Text>
-					<Button onClick={() => {
-						setLangActive(true);
-					}}>
+					<Button onClick={toggle}>
 						<WebIcon dark={dark ? 'true' : 'false'}/>
 						<ArrowIcon dark={dark ? 'true' : 'false'} rotate={langActive ? 'true' : 'false'}/>
 					</Button>
