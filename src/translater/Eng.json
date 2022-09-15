@@ -89,6 +89,30 @@
         "text": "Purchase and sale of cryptocurrencies and tokenized assets. Safe, fast, liquid!",
         "btn1": "Start trading",
         "btn2": "Learn more"
+      },
+      "slide3": {
+        "title": "Messengers",
+        "title2": "Wallet",
+        "text": "Envoys Vision Own Wallet",
+        "btn1": "Start trading",
+        "btn2": "Learn more"
+      },
+      "slide4": {
+        "title": "Launchpad",
+        "text": "Real tokenized companies, IDOs and STOs, participation in presales and much more!",
+        "btn1": "Start trading",
+        "btn2": "Learn more"
+      },
+      "slide5": {
+        "title": "Crypto loans",
+        "text": "Crypto loans and Cryptocurrency Landing",
+        "btn1": "Coming soon!"
+      },
+      "slide6": {
+        "name": "NFT",
+        "title2": "Market",
+        "text": "Get income from 10% to 100% per annum!",
+        "btn1": "Coming soon!"
       }
     },
     "howItworkds": {
