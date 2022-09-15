@@ -113,6 +113,7 @@ const Line = styled.div`
 type ItemType = {
 	icon: string;
 	title: string;
+	alt: string;
 	num: number;
 	desc: string;
 };
@@ -121,6 +122,7 @@ const OurAdvantages: React.FC = () => {
 	const [items, setItems] = useState<ItemType[]>([
 		{
 			title: '',
+			alt: '',
 			desc: '',
 			icon: Icon1 as string,
 			num: 1,
@@ -131,18 +133,21 @@ const OurAdvantages: React.FC = () => {
 		setItems([
 			{
 				title: t('home.advantages2.values.option1.title'),
+				alt: 'bank icon',
 				desc: t('home.advantages2.values.option2.text'),
 				icon: Icon1 as string,
 				num: 1,
 			},
 			{
 				title: t('home.advantages2.values.option2.title'),
+				alt: 'token icon',
 				desc: t('home.advantages2.values.option2.text'),
 				icon: Icon2 as string,
 				num: 2,
 			},
 			{
 				title: t('home.advantages2.values.option3.title'),
+				alt: 'support icon',
 				desc: t('home.advantages2.values.option3.text'),
 				icon: Icon3 as string,
 				num: 3,
@@ -164,7 +169,7 @@ const OurAdvantages: React.FC = () => {
 									<Num>{item.num}</Num>
 									<TextBlock>
 										<IconWrap>
-											<Icon src={item.icon} alt={item.icon}/>
+											<Icon src={item.icon} alt={item.alt}/>
 										</IconWrap>
 										<ItemTitle>{item.title}</ItemTitle>
 										<Desc>{item.desc}</Desc>

@@ -72,11 +72,11 @@ const Partners: React.FC = () => {
 	const [t] = useTranslation();
 
 	const slides = [
-		{img: PartnersImg1 as string},
-		{img: PartnersImg2 as string},
-		{img: PartnersImg3 as string},
-		{img: PartnersImg4 as string},
-		{img: PartnersImg5 as string},
+		{img: PartnersImg1 as string, alt: 'company logo'},
+		{img: PartnersImg2 as string, alt: 'company logo'},
+		{img: PartnersImg3 as string, alt: 'company logo'},
+		{img: PartnersImg4 as string, alt: 'company logo'},
+		{img: PartnersImg5 as string, alt: 'company logo'},
 	];
 	return (
 		<>
@@ -124,7 +124,7 @@ const Partners: React.FC = () => {
 								{slides.map((slide, index) => (
 									<SwiperSlide key={index}>
 										<ImageBlock>
-											<Image src={slide.img} alt={slide.img}/>
+											<Image src={slide.img} alt={slide.alt}/>
 										</ImageBlock>
 									</SwiperSlide>
 								))}
