@@ -87,6 +87,7 @@ const IconWrap = styled.div`
   background: #F9F9F9;
   border-radius: 20px;
   max-width: 64px;
+  height: 64px;
 `;
 const Icon = styled.img``;
 const Line = styled.div`

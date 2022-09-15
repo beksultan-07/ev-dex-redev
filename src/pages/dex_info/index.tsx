@@ -30,6 +30,10 @@ const DexInfo: React.FC<Props> = ({dark, setDark}) => {
 	useEffect(() => {
 		setDark(true);
 	}, [setDark]);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<>
 			<Wrap>
