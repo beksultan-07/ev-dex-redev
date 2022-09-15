@@ -143,11 +143,11 @@ const Banner: React.FC = () => {
 							</Desc>
 							<ButtonWrap>
 								<Button unvisible={false} target="_blank" href="https://app.envoys.vision/swap">
-                  {t('home.banner.btn1')}
-                </Button>
+									{t('home.banner.btn1')}
+								</Button>
 								<ButtonOutline soon={false} white={false} to="/dex-info">
-                  {t('home.banner.btn2')}
-                </ButtonOutline>
+									{t('home.banner.btn2')}
+								</ButtonOutline>
 							</ButtonWrap>
 							<SocialWrap>
 								{icons.map((icon, index) => (

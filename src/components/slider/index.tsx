@@ -209,7 +209,11 @@ const Column = styled.div<ColumnProps>`
   background-color: ${props => props.bg ? '#111A23' : '#fff'};
 `;
 
-const Slider: React.FC = () => {
+type Props = {
+	setDark: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Slider: React.FC<Props> = ({setDark}) => {
 	const [slides, setSlides] = useState([
 		{
 			img: {desktop: DexBg as string, mobile: DexBgMobile as string},
@@ -226,6 +230,28 @@ const Slider: React.FC = () => {
 	const [slideIndex, setSlideIndex] = React.useState<number>(0);
 
 	const [t] = useTranslation();
+
+	const checkHeaderOnSlider = () => {
+		const box = document.querySelector('#facts');
+		const headerHeight = document.querySelector('#header')!.clientHeight;
+		if (
+			box
+			&& box.getBoundingClientRect().top - headerHeight < 0
+			&& box.getBoundingClientRect().top - headerHeight > -box.clientHeight
+			&& slideIndex > 0
+		) {
+			setDark(true);
+		} else {
+			setDark(false);
+		}
+	};
+
+	useEffect(() => {
+		checkHeaderOnSlider();
+		window.addEventListener('scroll', e => {
+			checkHeaderOnSlider();
+		});
+	}, [slideIndex]);
 
 	useEffect(() => {
 		setSlides([
@@ -286,7 +312,7 @@ const Slider: React.FC = () => {
 			},
 			{
 				img: {desktop: NftBg as string, mobile: NftBgMobile as string},
-				title: t('home.dex.slide6.title'),
+				title: t('home.dex.slide6.title2'),
 				whiteTitle: true,
 				yellowTitle: 'NFT',
 				text: t('home.dex.slide6.text'),
