@@ -69,6 +69,7 @@ const ArrowIcon = styled(Arrow)<ArrowIconProps>`
 `;
 type DropDownProps = {
 	show: boolean;
+	dark: boolean;
 };
 const DropDown = styled.div<DropDownProps>`
   padding: 30px 15px;
@@ -78,44 +79,50 @@ const DropDown = styled.div<DropDownProps>`
   top: ${props => props.show ? '100%' : '40%'};
   left: -20px;
   z-index: -1;
-  background: #fff;
+  background: ${props => props.dark ? '#111A23' : 'rgba(255, 255, 255, 0.8)'};
   box-shadow: 0px 217px 130px rgba(0, 0, 0, 0.01), 0px 97px 97px rgba(0, 0, 0, 0.01), 0px 24px 53px rgba(0, 0, 0, 0.01), 0px 0px 0px rgba(0, 0, 0, 0.01);
   border-radius: 0px 0px 8px 8px;
   transition: .3s ease-in-out;
   @media (max-width: 1125px) {
     width: 100%;
+    min-height: 100vh;
     height: 100%;
-	  min-height: 100vh;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(42.1005px);
-    padding: 32px;
+    background: ${props => props.dark ? '#111A23' : 'rgba(255, 255, 255, 0.8)'};
+    backdrop-filter: blur(21.0503px);
+    padding: 70px 0px 70px 70px;
+    transition: .3s;
     position: fixed;
-    top: 0;
+    top: 48px;
     left: 0;
-    margin: 0;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
   }
+  @media (max-width: 375px) {
+    padding: 40px 0 40px 40px;
+  }
 `;
-const DropDownButton = styled.button`
+type DropDownButtonProps = {
+	dark: boolean;
+};
+const DropDownButton = styled.button<DropDownButtonProps>`
   font-weight: 400;
   font-size: 16px;
-  color: #133D65;
+  color: ${props => props.dark ? '#fff' : '#133D65'};
   cursor: pointer;
   transition: .3s;
   border: none;
   background: transparent;
   margin-bottom: 20px;
-
+	@media(max-width: 1125px){
+		font-size: 18px;
+	}
   :last-child {
     margin: 0;
   }
-
   :hover {
     color: #045599;
     font-weight: 600;
-    font-size: 16px;
   }
 `;
 type Props = {
@@ -146,11 +153,11 @@ const HeaderLang: React.FC<Props> = ({dark}) => {
 						<ArrowIcon dark={dark ? 'true' : 'false'} rotate={langActive ? 'true' : 'false'}/>
 					</Button>
 				</Content>
-				<DropDown show={langActive}>
-					<DropDownButton onClick={() => {
+				<DropDown dark={dark} show={langActive}>
+					<DropDownButton dark={dark} onClick={() => {
 						changeLang('ru');
 					}}>Русский</DropDownButton>
-					<DropDownButton onClick={() => {
+					<DropDownButton dark={dark} onClick={() => {
 						changeLang('en');
 					}}>English</DropDownButton>
 				</DropDown>
