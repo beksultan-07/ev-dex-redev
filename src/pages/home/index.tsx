@@ -20,7 +20,7 @@ const Home: React.FC<Props> = ({dark, setDark}) => {
 			<Banner/>
 			<Advantage/>
 			<OurAdvantages/>
-			<Slider/>
+			<Slider setDark={setDark}/>
 			<HowItWorks/>
 			<Documents/>
 			<Partners/>
