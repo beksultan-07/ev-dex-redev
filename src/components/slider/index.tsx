@@ -22,8 +22,8 @@ import {EffectFade, Navigation, Scrollbar, Mousewheel} from 'swiper';
 import {Button, ButtonOutline} from '../../UI/UI';
 
 const SwiperWrap = styled.section`
-  min-height: 100vh;
-  height: 100%;
+  min-height: 80vh;
+  height: 80%;
   display: flex;
   align-items: center;
 	@media(max-width: 992px){
@@ -112,7 +112,7 @@ type SlideProps = {
 const Slide = styled.div<SlideProps>`
   background: ${props => props.bg} url(${props => props.image}) center center / cover no-repeat;
 	height: 100%;
-	min-height: 100vh;
+	min-height: 80vh;
   @media (max-width: 1336px) {
     background-position-x: center ;
   }

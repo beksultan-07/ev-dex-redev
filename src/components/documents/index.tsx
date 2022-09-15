@@ -139,7 +139,6 @@ const Documents: React.FC = () => {
 		<>
 			<Wrap id="documents">
 				<Content>
-
 					<Container>
 						<Title indentBottom={'90px'} textAlign={true} color={'#fff'}>Документы</Title>
 						<SwiperWrap>

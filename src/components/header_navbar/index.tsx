@@ -83,7 +83,7 @@ const HeaderNavbar: React.FC<Props> = ({burger, langActive, setLangActive, dark}
 		<>
 			<NavbarBlock dark={dark} active={burger}>
 				{links.map(link => (<Link dark={dark} key={link.id} href={link.href} active={false}>{link.text}</Link>))}
-				<Button href="#">Перейти в APP</Button>
+				<Button href="https://app.envoys.vision/swap" target="_blank">Перейти в APP</Button>
 				<HeaderLang dark={dark} langActive={langActive} setLangActive={setLangActive}/>
 			</NavbarBlock>
 		</>

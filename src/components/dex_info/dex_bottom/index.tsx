@@ -6,6 +6,7 @@ import Description from '../description/index';
 const Wrap = styled.div`
 	display: flex;
 	align-items: flex-start;
+  justify-content: space-between;
   position: relative;
 	z-index: 1;
 	@media(max-width: 900px){

@@ -114,12 +114,12 @@ const Video = styled.video`
 
 const Banner: React.FC = () => {
 	const icons = [
-		{icon: TelegramIcon, href: '#'},
-		{icon: FacebookIcon, href: '#'},
-		{icon: TwitterIcon, href: '#'},
-		{icon: GithubIcon, href: '#'},
-		{icon: YoutubeIcon, href: '#'},
-		{icon: IntersectIcon, href: '#'},
+		{icon: TelegramIcon, href: 'https://web.telegram.org/k/'},
+		{icon: FacebookIcon, href: 'https://www.facebook.com/'},
+		{icon: TwitterIcon, href: 'https://twitter.com'},
+		{icon: GithubIcon, href: 'https://github.com/'},
+		{icon: YoutubeIcon, href: 'https://www.youtube.com/'},
+		{icon: IntersectIcon, href: 'https://about.gitlab.com/'},
 	];
 	return (
 
@@ -132,12 +132,12 @@ const Banner: React.FC = () => {
 							<Desc>Envoys Vision - это доступность к финансовым рынкам, безопасность инвестирования в стартапы, высокая
                 доходность для поставщиков ликвидности!</Desc>
 							<ButtonWrap>
-								<Button unvisible={false} href="#">Launch App</Button>
+								<Button unvisible={false} target="_blank" href="https://app.envoys.vision/swap">Launch App</Button>
 								<ButtonOutline soon={false} white={false} to="/dex-info">More info</ButtonOutline>
 							</ButtonWrap>
 							<SocialWrap>
 								{icons.map((icon, index) => (
-									<SocialLink href={icon.href} key={index}>{useSvgComponent(icon.icon)}</SocialLink>))}
+									<SocialLink target="_blank" href={icon.href} key={index}>{useSvgComponent(icon.icon)}</SocialLink>))}
 							</SocialWrap>
 						</ContentText>
 						<VideoWrap>
