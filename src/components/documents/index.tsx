@@ -15,6 +15,7 @@ import DocumentImg10 from '../../assets/documents/Документы-ЕВДЕ10.
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {Autoplay} from 'swiper';
+import {useTranslation} from 'react-i18next';
 
 const Wrap = styled.section`
   min-height: 100vh;
@@ -109,30 +110,49 @@ const ButtonText = styled.span`
 const SwiperWrap = styled.div``;
 
 const Documents: React.FC = () => {
-	const docBaseUrl = 'https://drive.google.com/';
-
-	const docToDownload1 = `${docBaseUrl}uc?export=download&id=1-G7wdiBMrFYuIwQ74JOgSyhqzdheBP8C`;
-	const docToDownload2 = `${docBaseUrl}uc?export=download&id=1h3q5VPlDBtbD_aTS__g2kLJ-tBHSV-Hy`;
-	const docToDownload4 = `${docBaseUrl}uc?export=download&id=1LqTnk760B5iOcSr2pbN_b6WhzSvddStZ`;
-	const docToDownload3 = `${docBaseUrl}uc?export=download&id=1Vo7zBgJJQ_0hlWUjhqKb1Hotd1naUvZq`;
-	const docToDownload5 = `${docBaseUrl}uc?export=download&id=1tyvB0QkEcu2gDnHd7siOt0_kO2reL9LL`;
-	const docToDownload6 = `${docBaseUrl}uc?export=download&id=1cgfEMTQYwSAhvbbBNHhBp7tmWApFRaLz`;
-	const docToDownload7 = `${docBaseUrl}uc?export=download&id=14_XrRvr572qW-R2O24fIypa3e6j_b5xE`;
-	const docToDownload8 = `${docBaseUrl}uc?export=download&id=1cuQdMlxyNvwWZ839FKS5JBoC_sJ1kFdQ`;
-	const docToDownload9 = `${docBaseUrl}uc?export=download&id=1sGBJr5IGt0gNS1H9gEtlCVYPyKEoL5bH`;
-	const docToDownload10 = `${docBaseUrl}uc?export=download&id=1q2HHa6dPSmE8518DUIMtF3Cicns3EbuP`;
+	const {t, i18n} = useTranslation();
 
 	const [docs, setDocs] = React.useState([
-		{title: 'White paper', img: DocumentImg1 as string, link: docToDownload1},
-		{title: 'White paper', img: DocumentImg2 as string, link: docToDownload2},
-		{title: 'White paper', img: DocumentImg3 as string, link: docToDownload3},
-		{title: 'White paper', img: DocumentImg4 as string, link: docToDownload4},
-		{title: 'White paper', img: DocumentImg5 as string, link: docToDownload5},
-		{title: 'White paper', img: DocumentImg6 as string, link: docToDownload6},
-		{title: 'White paper', img: DocumentImg7 as string, link: docToDownload7},
-		{title: 'White paper', img: DocumentImg8 as string, link: docToDownload8},
-		{title: 'White paper', img: DocumentImg9 as string, link: docToDownload9},
-		{title: 'White paper', img: DocumentImg10 as string, link: docToDownload10},
+		{
+			title: 'Certificate of state registration', img: {
+				en: DocumentImg1 as string,
+				ru: DocumentImg2 as string,
+			}, link: {
+				en: 'https://drive.google.com/uc?export=download&id=1h3q5VPlDBtbD_aTS__g2kLJ-tBHSV-Hy',
+				ru: 'https://drive.google.com/uc?export=download&amp;id=1-G7wdiBMrFYuIwQ74JOgSyhqzdheBP8C',
+			}},
+		{
+			title: 'License to organize trading on the securities market', img: {
+				en: DocumentImg3 as string,
+				ru: DocumentImg4 as string,
+			}, link: {
+				en: 'https://drive.google.com/uc?export=download&id=1LqTnk760B5iOcSr2pbN_b6WhzSvddStZ',
+				ru: 'https://drive.google.com/uc?export=download&id=1Vo7zBgJJQ_0hlWUjhqKb1Hotd1naUvZq',
+			}},
+		{
+			title: 'License for depositary activity', img: {
+				en: DocumentImg5 as string,
+				ru: DocumentImg6 as string,
+			}, link: {
+				en: 'https://drive.google.com/uc?export=download&id=1cgfEMTQYwSAhvbbBNHhBp7tmWApFRaLz',
+				ru: 'https://drive.google.com/uc?export=download&id=1tyvB0QkEcu2gDnHd7siOt0_kO2reL9LL',
+			}},
+		{
+			title: 'Software State Registration Certificate', img: {
+				en: DocumentImg7 as string,
+				ru: DocumentImg8 as string,
+			}, link: {
+				en: 'https://drive.google.com/uc?export=download&id=1cuQdMlxyNvwWZ839FKS5JBoC_sJ1kFdQ',
+				ru: 'https://drive.google.com/uc?export=download&id=14_XrRvr572qW-R2O24fIypa3e6j_b5xE',
+			}},
+		{
+			title: 'Decision on the founding issue of shares', img: {
+				en: DocumentImg9 as string,
+				ru: DocumentImg10 as string,
+			}, link: {
+				en: 'https://drive.google.com/uc?export=download&id=1q2HHa6dPSmE8518DUIMtF3Cicns3EbuP',
+				ru: 'https://drive.google.com/uc?export=download&id=1sGBJr5IGt0gNS1H9gEtlCVYPyKEoL5bH',
+			}},
 	]);
 
 	return (
@@ -187,9 +207,9 @@ const Documents: React.FC = () => {
 									<SwiperSlide key={index}>
 										<Item>
 											<ItemTitle>{doc.title}</ItemTitle>
-											<Image src={doc.img} alt={doc.img}/>
-											<Button href={doc.link}>
-												<Icon src={DownloadIcon as string} alt={DownloadIcon as string}/>
+											<Image src={doc.img[i18n.language as keyof typeof doc.img]} alt={'document'}/>
+											<Button href={doc.link[i18n.language as keyof typeof doc.link]}>
+												<Icon src={DownloadIcon as string} alt={'download icon'}/>
 												<ButtonText>Скачать</ButtonText>
 											</Button>
 										</Item>
