@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import styled from 'styled-components';
 import Search from '../search/index';
 
@@ -40,23 +41,23 @@ const Desc = styled.p`
   max-width: 808px;
 `;
 
-const DexTop: React.FC = () => (
-	<>
-		<Wrap>
-			<Content>
-				<Info>
-					<Title>Что такое DEX биржа ?</Title>
-					<Desc>Децентрализованная биржа (DEX, decentralized exchange) — это биржа, которая работает на основе
-						распределенного реестра, не хранит средства и персональные данные пользователей на своих серверах и
-						выступает только платформой для поиска совпадений по заявкам на покупку или продажу активов пользователей.
-						Торговля на таких платформах происходит напрямую между участниками (peer-to-peer) без каких-либо финансовых
-						посредников.
-					</Desc>
-				</Info>
-				<Search/>
-			</Content>
-		</Wrap>
-	</>
-);
+const DexTop: React.FC = () => {
+	const [t] = useTranslation();
+	return (
+		<>
+			<Wrap>
+				<Content>
+					<Info>
+						<Title>{t('dexInfo.dex.title')}</Title>
+						<Desc>
+							{t('dexInfo.dex.text')}
+						</Desc>
+					</Info>
+					<Search/>
+				</Content>
+			</Wrap>
+		</>
+	);
+};
 
 export default DexTop;

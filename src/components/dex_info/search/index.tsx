@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import styled from 'styled-components';
 import SearchIcon from '../../../assets/dex_info/search.svg';
 
@@ -38,16 +39,26 @@ const LinkSpan = styled.span`
 	text-decoration: underline;
 `;
 
-const Search: React.FC = () => (
-	<>
-		<Wrap>
-			<InputFieldBlock>
-				<Icon src={SearchIcon as string} alt={SearchIcon as string}/>
-				<InputField/>
-			</InputFieldBlock>
-			<LinkBlock><Link href="#">Есть еще вопросы? <LinkSpan>Отправить запрос</LinkSpan></Link></LinkBlock>
-		</Wrap>
-	</>
-);
+const Search: React.FC = () => {
+	const [t] = useTranslation();
+	return (
+		<>
+			<Wrap>
+				<InputFieldBlock>
+					<Icon src={SearchIcon as string} alt={SearchIcon as string}/>
+					<InputField/>
+				</InputFieldBlock>
+				<LinkBlock>
+					<Link href="#">
+						{t('dexInfo.question.text')}
+						<LinkSpan>
+							{t('dexInfo.question.text')}
+						</LinkSpan>
+					</Link>
+				</LinkBlock>
+			</Wrap>
+		</>
+	);
+};
 
 export default Search;

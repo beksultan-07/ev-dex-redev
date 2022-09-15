@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import BackgroundImg from '../../assets/advantage/bg.jpg';
 import DollarIcon from '../../assets/advantage/icon1.svg';
@@ -6,6 +6,7 @@ import LikeIcon from '../../assets/advantage/icon2.svg';
 import SafeIcon from '../../assets/advantage/icon3.svg';
 import CaseIcon from '../../assets/advantage/icon4.svg';
 import {Wrap} from '../../UI/UI';
+import {useTranslation} from 'react-i18next';
 
 const Background = styled.div`
   background: url(${BackgroundImg}) 0 0 / cover;
@@ -70,12 +71,23 @@ type ItemType = {
 };
 
 const Advantage: React.FC = () => {
-	const items: ItemType[] = [
-		{img: DollarIcon as string, text: 'Низкие комиссии!', num: '0.1%'},
-		{img: SafeIcon as string, text: 'Total value locked', num: '$625 347 594'},
-		{img: LikeIcon as string, text: 'Нам доверяют', num: '1 329 113'},
-		{img: CaseIcon as string, text: 'Total trading volume', num: '$41 600 342 591'},
-	];
+	const [t] = useTranslation();
+
+	const [items, setItems] = useState<ItemType[]>([
+		{img: DollarIcon as string, text: '', num: '1'},
+	]);
+
+	useEffect(() => {
+		setItems(
+			[
+				{img: DollarIcon as string, text: t('home.advantages1.option1'), num: '0.1%'},
+				{img: SafeIcon as string, text: t('home.advantages1.option2'), num: '$625 347 594'},
+				{img: LikeIcon as string, text: t('home.advantages1.option3'), num: '1 329 113'},
+				{img: CaseIcon as string, text: t('home.advantages1.option4'), num: '$41 600 342 591'},
+			],
+		);
+	}, [t]);
+
 	return (
 		<>
 			<Wrap bg={false}>

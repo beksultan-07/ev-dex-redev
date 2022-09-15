@@ -1,6 +1,7 @@
 import React from 'react';
 import ChatImage from '../../../assets/dex_info/chat.png';
 import styled from 'styled-components';
+import {useTranslation} from 'react-i18next';
 
 const Wrap = styled.div`
   background: #121B24;
@@ -70,21 +71,30 @@ const Image = styled.img`
 	width: 100%;
 `;
 
-const Request: React.FC = () => (
-	<>
-		<Wrap>
-			<Content>
-				<Info>
-					<Title>Все еще нужна наша помощь ?</Title>
-					<Desc>Вы также можете отправить вопрос или запрос здесь, и мы обязательно свяжемся с вами! 👇</Desc>
-					<Button>Отправить запрос</Button>
-				</Info>
-				<ImageBlock>
-					<Image src={ChatImage as string} alt={ChatImage as string}/>
-				</ImageBlock>
-			</Content>
-		</Wrap>
-	</>
-);
+const Request: React.FC = () => {
+	const [t] = useTranslation();
+	return (
+		<>
+			<Wrap>
+				<Content>
+					<Info>
+						<Title>
+							{t('dexInfo.request.title')}
+						</Title>
+						<Desc>
+							{t('dexInfo.request.text')}
+						</Desc>
+						<Button>
+							{t('dexInfo.request.btn')}
+						</Button>
+					</Info>
+					<ImageBlock>
+						<Image src={ChatImage as string} alt={ChatImage as string}/>
+					</ImageBlock>
+				</Content>
+			</Wrap>
+		</>
+	);
+};
 
 export default Request;

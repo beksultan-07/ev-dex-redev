@@ -10,6 +10,7 @@ import PartnersImg5 from '../../assets/partners/partner5.png';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {Autoplay} from 'swiper';
+import {useTranslation} from 'react-i18next';
 
 const Wrap = styled.section`
   min-height: 100vh;
@@ -68,6 +69,8 @@ const Image = styled.img`
 `;
 
 const Partners: React.FC = () => {
+	const [t] = useTranslation();
+
 	const slides = [
 		{img: PartnersImg1 as string},
 		{img: PartnersImg2 as string},
@@ -79,8 +82,12 @@ const Partners: React.FC = () => {
 		<>
 			<Wrap id="partners">
 				<Container>
-					<Title textAlign={true} color={'#0F2B46'}>Наши компании и партнёры</Title>
-					<Text>The tools and resources to augment your project to the next level</Text>
+					<Title textAlign={true} color={'#0F2B46'}>
+						{t('home.partners.title')}
+					</Title>
+					<Text>
+						{t('home.partners.text')}
+					</Text>
 					<SwiperWrap>
 						<SwiperTop>
 							<Swiper

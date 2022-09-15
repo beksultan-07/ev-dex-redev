@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import DexBg from '../../assets/slider/dex-bg.jpg';
 import DexBgMobile from '../../assets/slider/dex-bg-mobile.png';
 import DexBgDark from '../../assets/slider/dex-bg-dark.jpg';
@@ -20,6 +20,7 @@ import 'swiper/css/navigation';
 
 import {EffectFade, Navigation, Scrollbar, Mousewheel} from 'swiper';
 import {Button, ButtonOutline} from '../../UI/UI';
+import {useTranslation} from 'react-i18next';
 
 const SwiperWrap = styled.section`
   min-height: 100vh;
@@ -209,7 +210,7 @@ const Column = styled.div<ColumnProps>`
 `;
 
 const Slider: React.FC = () => {
-	const slides = [
+	const [slides, setSlides] = useState([
 		{
 			img: {desktop: DexBg as string, mobile: DexBgMobile as string},
 			title: 'Farming and Staking',
@@ -221,63 +222,81 @@ const Slider: React.FC = () => {
 			buttonOutlineText: 'Узнать больше',
 			unvisible: false,
 		},
-		{
-			img: {desktop: DexBgDark as string, mobile: DexBgDarkMobile as string},
-			title: 'Биржа ',
-			whiteTitle: true,
-			yellowTitle: 'DEX',
-			text: 'Покупка и продажа криптовалюты и токенизированных активов. Безопасно, быстро, ликвидно!',
-			right: false,
-			buttonText: 'Начать торговлю',
-			buttonOutlineText: 'Узнать больше',
-			unvisible: false,
-		},
-		{
-			img: {desktop: WalletBg as string, mobile: WalletBgMobile as string},
-			title: 'Wallet',
-			whiteTitle: true,
-			yellowTitle: 'Envoys',
-			text: 'Собственный кошелек Envoys Vision ',
-			right: true,
-			buttonText: 'Начать торговлю',
-			buttonOutlineText: 'Узнать больше',
-			unvisible: false,
-		},
-		{
-			img: {desktop: LaunchBg as string, mobile: LaunchBgMobile as string},
-			title: 'Лаунчпад',
-			whiteTitle: true,
-			yellowTitle: ' ',
-			text: 'Настоящие токенизированные компании, IDO и STO, участие в пресейлах и многое другое!',
-			right: false,
-			buttonText: 'Начать торговлю',
-			buttonOutlineText: 'Узнать больше',
-			unvisible: false,
-		},
-		{
-			img: {desktop: CreditsBg as string, mobile: CreditsBgMobile as string},
-			title: 'Cryptocredits',
-			whiteTitle: true,
-			yellowTitle: ' ',
-			text: 'Криптокредиты и “Landing” криптовалюты',
-			right: true,
-			buttonText: '',
-			buttonOutlineText: 'Скоро!',
-			unvisible: true,
-		},
-		{
-			img: {desktop: NftBg as string, mobile: NftBgMobile as string},
-			title: 'Marketplace',
-			whiteTitle: true,
-			yellowTitle: 'NFT',
-			text: 'Получай доход от 10% до 100% годовых!',
-			right: false,
-			buttonText: '',
-			buttonOutlineText: 'Скоро!',
-			unvisible: true,
-		},
-	];
+	]);
 	const [slideIndex, setSlideIndex] = React.useState<number>(0);
+
+	const [t] = useTranslation();
+
+	useEffect(() => {
+		setSlides([
+			{
+				img: {desktop: DexBg as string, mobile: DexBgMobile as string},
+				title: t('home.dex.slide1.title'),
+				whiteTitle: false,
+				yellowTitle: ' ',
+				text: t('home.dex.slide1.text'),
+				right: false,
+				buttonText: t('home.dex.slide1.btn1'),
+				buttonOutlineText: t('home.dex.slide1.btn2'),
+				unvisible: false,
+			},
+			{
+				img: {desktop: DexBgDark as string, mobile: DexBgDarkMobile as string},
+				title: t('home.dex.slide2.title2'),
+				whiteTitle: true,
+				yellowTitle: t('home.dex.slide2.title'),
+				text: t('home.dex.slide2.text'),
+				right: false,
+				buttonText: t('home.dex.slide2.btn1'),
+				buttonOutlineText: t('home.dex.slide2.btn2'),
+				unvisible: false,
+			},
+			{
+				img: {desktop: WalletBg as string, mobile: WalletBgMobile as string},
+				title: t('home.dex.slide3.title2'),
+				whiteTitle: true,
+				yellowTitle: t('home.dex.slide3.title'),
+				text: t('home.dex.slide3.text'),
+				right: true,
+				buttonText: t('home.dex.slide3.btn1'),
+				buttonOutlineText: t('home.dex.slide3.btn2'),
+				unvisible: false,
+			},
+			{
+				img: {desktop: LaunchBg as string, mobile: LaunchBgMobile as string},
+				title: t('home.dex.slide4.title'),
+				whiteTitle: true,
+				yellowTitle: ' ',
+				text: t('home.dex.slide4.text'),
+				right: false,
+				buttonText: t('home.dex.slide4.btn1'),
+				buttonOutlineText: t('home.dex.slide4.btn2'),
+				unvisible: false,
+			},
+			{
+				img: {desktop: CreditsBg as string, mobile: CreditsBgMobile as string},
+				title: t('home.dex.slide5.title'),
+				whiteTitle: true,
+				yellowTitle: ' ',
+				text: t('home.dex.slide5.text'),
+				right: true,
+				buttonText: '',
+				buttonOutlineText: t('home.dex.slide5.btn1'),
+				unvisible: true,
+			},
+			{
+				img: {desktop: NftBg as string, mobile: NftBgMobile as string},
+				title: t('home.dex.slide6.title'),
+				whiteTitle: true,
+				yellowTitle: 'NFT',
+				text: t('home.dex.slide6.text'),
+				right: false,
+				buttonText: '',
+				buttonOutlineText: t('home.dex.slide6.btn'),
+				unvisible: true,
+			},
+		]);
+	}, [t]);
 
 	return (
 		<>
