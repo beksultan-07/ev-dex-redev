@@ -9,13 +9,12 @@ import {ReactComponent as Intersect} from '../../assets/social/intersect.svg';
 import {ReactComponent as Youtube} from '../../assets/social/youtube.svg';
 import {ReactComponent as Twitter} from '../../assets/social/twitter.svg';
 import {useSvgComponent} from '../../hooks/useSvgComponent';
-import {useTranslation} from 'react-i18next';
 
 const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-	padding: 65px 0;
+  padding: 65px 0;
   @media (max-width: 960px) {
     flex-direction: column-reverse;
   }
@@ -77,6 +76,7 @@ const SocialWrap = styled.div`
 `;
 const SocialLink = styled.a`
   cursor: pointer;
+
   svg {
     transition: .3s ease-in-out;
     fill: #949BA0;
@@ -114,8 +114,6 @@ const Video = styled.video`
 `;
 
 const Banner: React.FC = () => {
-	const {t} = useTranslation();
-
 	const icons = [
 		{icon: TelegramIcon, href: 'https://web.telegram.org/k/'},
 		{icon: FacebookIcon, href: 'https://www.facebook.com/'},
@@ -131,23 +129,18 @@ const Banner: React.FC = () => {
 				<Container>
 					<Content>
 						<ContentText>
-							<Title>
-								{t('home.banner.title.title1')}
-								<YellowTitle>
-									{t('home.banner.title.title2')}
-								</YellowTitle>
-								{t('home.banner.title.title3')}
-							</Title>
-							<Desc>
-								{t('home.banner.text')}
-							</Desc>
+							<Title>Безопасность <YellowTitle>Скорость</YellowTitle> Ликвидность</Title>
+							<Desc>Envoys Vision - это доступность к финансовым рынкам, безопасность инвестирования в стартапы, высокая
+								доходность для поставщиков ликвидности!</Desc>
 							<ButtonWrap>
+              
 								<Button unvisible={false} target="_blank" href="https://app.envoys.vision/swap">
 									{t('home.banner.btn1')}
 								</Button>
 								<ButtonOutline soon={false} white={false} to="/dex-info">
 									{t('home.banner.btn2')}
 								</ButtonOutline>
+
 							</ButtonWrap>
 							<SocialWrap>
 								{icons.map((icon, index) => (
