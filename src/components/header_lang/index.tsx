@@ -85,6 +85,7 @@ const DropDown = styled.div<DropDownProps>`
   @media (max-width: 1125px) {
     width: 100%;
     height: 100%;
+	  min-height: 100vh;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(42.1005px);
     padding: 32px;
