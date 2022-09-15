@@ -117,12 +117,12 @@ const Banner: React.FC = () => {
 	const {t} = useTranslation();
 
 	const icons = [
-		{icon: TelegramIcon, href: '#'},
-		{icon: FacebookIcon, href: '#'},
-		{icon: TwitterIcon, href: '#'},
-		{icon: GithubIcon, href: '#'},
-		{icon: YoutubeIcon, href: '#'},
-		{icon: IntersectIcon, href: '#'},
+		{icon: TelegramIcon, href: 'https://web.telegram.org/k/'},
+		{icon: FacebookIcon, href: 'https://www.facebook.com/'},
+		{icon: TwitterIcon, href: 'https://twitter.com'},
+		{icon: GithubIcon, href: 'https://github.com/'},
+		{icon: YoutubeIcon, href: 'https://www.youtube.com/'},
+		{icon: IntersectIcon, href: 'https://about.gitlab.com/'},
 	];
 	return (
 
@@ -142,12 +142,16 @@ const Banner: React.FC = () => {
 								{t('home.banner.text')}
 							</Desc>
 							<ButtonWrap>
-								<Button unvisible={false} href="#">{t('home.banner.btn1')}</Button>
-								<ButtonOutline soon={false} white={false} to="/dex-info">{t('home.banner.btn2')}</ButtonOutline>
+								<Button unvisible={false} target="_blank" href="https://app.envoys.vision/swap">
+                  {t('home.banner.btn1')}
+                </Button>
+								<ButtonOutline soon={false} white={false} to="/dex-info">
+                  {t('home.banner.btn2')}
+                </ButtonOutline>
 							</ButtonWrap>
 							<SocialWrap>
 								{icons.map((icon, index) => (
-									<SocialLink href={icon.href} key={index}>{useSvgComponent(icon.icon)}</SocialLink>))}
+									<SocialLink target="_blank" href={icon.href} key={index}>{useSvgComponent(icon.icon)}</SocialLink>))}
 							</SocialWrap>
 						</ContentText>
 						<VideoWrap>
