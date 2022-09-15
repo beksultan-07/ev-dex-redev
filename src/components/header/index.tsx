@@ -15,10 +15,11 @@ const HeaderBlock = styled.header<HeaderProps>`
   padding: 15px 0;
   position: fixed;
   width: 100%;
-  background: ${props => props.dark === 'true' ? '#111A23' : '#fff'};
+  background: ${props => props.dark === 'true' ? '#111A23' : 'rgba(255, 255, 255, 0.8)'};
   filter: drop-shadow(${props => props.dark === 'true' ? '0px 4px 10px rgba(40, 40, 40, .0)' : '0px 4px 10px rgba(200, 200, 200, 0.1)'});
   border-bottom: ${props => props.dark === 'true' ? '1px solid rgba(255, 255, 255, 0.1)' : 'none'};
   z-index: 3;
+  backdrop-filter: blur(25px);
 `;
 const Content = styled.div`
   display: flex;
