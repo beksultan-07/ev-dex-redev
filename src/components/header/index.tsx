@@ -71,7 +71,7 @@ const Header: React.FC<Props> = ({dark}) => {
 
 	return (
 		<>
-			<HeaderBlock dark={dark ? 'true' : 'false'}>
+			<HeaderBlock dark={dark ? 'true' : 'false'} id="header">
 				<Container>
 					<Content>
 						<LogoLink dark={dark ? 'true' : 'false'} to="/">
