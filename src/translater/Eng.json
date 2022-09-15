@@ -1,0 +1,186 @@
+{
+  "header": {
+    "link1": "Our advantages",
+    "link2": "Facts",
+    "link3": "How it works",
+    "link5": "Documents",
+    "link6": "Partners",
+    "link7": "Go to APP"
+  },
+  "footer": {
+    "title": "Join the community",
+    "text": "Join a wide active community of builders and partners",
+    "textBottom": "© 2022 Envoys Vision Systems Operating Company. All rights reserved.",
+    "nav": {
+      "col1": {
+        "title": "Company",
+        "link1": "Develop",
+        "link2": "Economy",
+        "link3": "Technology",
+        "link4": "Community",
+        "link5": "Community",
+        "link6": "Blog"
+      },
+      "col2": {
+        "title": "Technology",
+        "link1": "Documentation",
+        "link2": "Test network",
+        "link3": "ERTP: Electronic Rights Transfer Protocol",
+        "link4": "Zoya: Securing Offers",
+        "link5": "SES: Secure ECMAScript",
+        "link6": "MBK",
+        "link7": "Change Logs"
+      },
+      "col3": {
+        "title": "Legal",
+        "link1": "Terms and Conditions",
+        "link2": "Privacy Policy"
+      }
+    }
+  },
+  "cookies": {
+    "title": "Your privacy",
+    "text": "By clicking Accept All Cookies, you agree that Envoys Dex may store cookies in accordance with our Cookies Policy.",
+    "btn": "Accept all cookies"
+  },
+  "home": {
+    "banner": {
+      "title": {
+        "title1": "Security",
+        "title2": "Speed",
+        "title3": "Liquidity"
+      },
+      "text": "Envoys Vision is accessibility to the securities market, safety of investments in startups, high profitability for liquidity!",
+      "btn1": "Launch Application",
+      "btn2": "More info"
+    },
+    "advantages1": {
+      "option1": "Low fees!",
+      "option2": "We are trusted",
+      "option3": "Total cost locked",
+      "option4": "Total trading volume"
+    },
+    "advantages2": {
+      "title": "Our advantages",
+      "values": {
+        "option1": {
+          "title": "Deposit via bank",
+          "text": "Deposits in fiat currencies. Deposits in euros (EUR), US dollars (USD) and other fiat currencies with reservation fees."
+        },
+        "option2": {
+          "title": "Tokenize your company",
+          "text": "Easy entry into the blockchain industry for companies in classical sectors of the economy. Tokenization of companies of any entry levels."
+        },
+        "option3": {
+          "title": "State Support",
+          "text": "Deposits in fiat currencies. Deposits in euros (EUR), US dollars (USD) and other fiat currencies with reservation fees."
+        }
+      }
+    },
+    "dex": {
+      "slide1": {
+        "title": "Farming and Staking",
+        "text": "Get income from 10% to 100% per annum!",
+        "btn1": "Start farming",
+        "btn2": "Learn more"
+      },
+      "slide2": {
+        "title": "Exchange",
+        "text": "Purchase and sale of cryptocurrencies and tokenized assets. Safe, fast, liquid!",
+        "btn1": "Start trading",
+        "btn2": "Learn more"
+      },
+      "slide3": {
+        "title": "Messengers",
+        "title2": "Wallet",
+        "text": "Envoys Vision Own Wallet",
+        "btn1": "Start trading",
+        "btn2": "Learn more"
+      },
+      "slide4": {
+        "title": "Launchpad",
+        "text": "Real tokenized companies, IDOs and STOs, participation in presales and much more!",
+        "btn1": "Start trading",
+        "btn2": "Learn more"
+      },
+      "slide5": {
+        "title": "Crypto loans",
+        "text": "Crypto loans and Cryptocurrency Landing",
+        "btn1": "Coming soon!"
+      },
+      "slide6": {
+        "name": "NFT",
+        "title2": "Market",
+        "text": "Get income from 10% to 100% per annum!",
+        "btn1": "Coming soon!"
+      }
+    },
+    "howItworkds": {
+      "title": "How it works",
+      "text": "Liquidity mining, pool trading or classic order book!"
+    },
+    "docs": {
+      "title": "Documents",
+      "btn": "Download"
+    },
+    "partners": {
+      "title": "Our companies and partners",
+      "text": "Tools and resources to take your project to the next level"
+    }
+  },
+  "dexInfo": {
+    "dex": {
+      "title": "What is a DEX exchange?",
+      "text": "A decentralized exchange (DEX) is an exchange that operates on the basis of a distributed ledger, does not store user funds and personal data on its servers, and acts only as a platform for matching requests for the purchase or sale of user assets. Trading on such platforms takes place directly between participants (peer-to-peer) without any financial intermediaries.",
+      "question": "Any more questions? Submit a request",
+      "block": {
+        "title": "What are the main benefits of Envoys Vision DEX?",
+        "text1": "Envoys Vision DEX combines all the advantages of decentralized exchanges, but at the same time opens up the possibility for users to trade in tokenized shares and other securities.",
+        "text2": "- Envoys Vision DEX provides complete user anonymity when trading cryptocurrencies; However, we require verification (KYC / AML) when trading tokenized assets such as: stocks, bonds, bills and other securities - which makes it possible to legally enforce the right ownership of shares in various companies, ownership, make it possible to receive dividends and real income on the difference in quotations, acquire real estate or art, precious metals, copyrights, etc. Tokenized assets are subject to regulations governing the circulation of securities, and impose responsibility and verification on the companies that issue them.",
+        "text3": "- The data of users and companies that have passed verification is stored on a specialized service “KYCAID” that uses 256-bit encryption. SSL in 100% of cases on each device. The Kycaid Limited database complies with the requirements of SSAE 16, ISO 27001 AND PCI DSS V3.0 and HIPAA Compliant.",
+        "text4": "- We do not store users' assets, therefore various hacker attacks do not threaten the loss of funds, which significantly distinguishes DEX from centralized exchanges.",
+        "text5": "- We don't have a single point of entry through which all assets could be accessed, which complicates the work for crackers and makes the attack itself meaningless;",
+        "text6": "- There are no personal accounts on Envoys Vision DEX, verification is required only when trading tokenized assets, when trading cryptocurrencies, you don't even need to specify an email.",
+        "text7": "- Envoys Vision DEX leaves users full control over their funds, orders and data, and at the same time full responsibility for their actions.",
+        "title2": "What are the benefits of tokenized assets?",
+        "text8": "- Tokenized assets minimize the role of the depository, reducing its obligations to holding security real shares.",
+        "text9": "- Allows you to buy fractional parts of securities.",
+        "text10": "- Trading tokenized assets is much faster and more technologically advanced thanks to the use of blockchain.",
+        "text11": "- An advantage that investors can enjoy is that they don't need a brokerage account to buy assets.",
+        "text12": "- Unlike volatile cryptocurrencies, which can quickly rise in price and just as rapidly fall in price, tokenized assets are considered more reliable, as they are characterized by material rights.",
+        "text13": "- Thanks to the blockchain, the regulator will be able to track all transactions, and smart contracts can determine the identity of the buyer, the time of the transaction, the scheme for distributing income or paying dividends. This increases the transparency of transactions.",
+        "text14": "- When buying tokenized assets, you can use both regular money (fiat) and cryptocurrencies. The absence of infrastructure barriers and costs gives traders opportunities that were previously available only to institutional investors.",
+        "text15": "- Tokenization is well suited for low-liquid assets such as art and real estate. Such high-value assets can be split into tens, hundreds or thousands of low-value tokens, which will increase their liquidity and availability for investors.",
+        "text16": "- The tokenization procedure is called “STO” - it is a faster and cheaper analogue of an IPO. Listing costs are reduced due to the absence of the need to involve intermediaries like investment banks. Audit and underwriting procedures for blockchain projects are also easier. And participating in STO almost any private investor can.",
+        "text17": "- Cryptoactive helps the company to get financing, and interested investors - a digital tool that allows them to make a profit."  
+      }
+    },
+    "farming": {
+      "title": "What is farming ?",
+      "text": "Cryptocurrency farming (profitable farming) is an important aspect of the DeFi concept. The first step in profitable farming involves adding funds to the liquidity pool. The liquidity pool is a smart contract in which the user's funds are blocked. These pools provide a market (liquidity) where other users can exchange their cryptocurrencies, borrow or lend their tokens. After adding funds to the liquidity pool, the user officially becomes a liquidity provider. In exchange for blocking tokens in the pool, the liquidity provider receives a reward. Rewards are accrued around the clock and are usually paid in the form of tokens. The collected tokens can be invested back into the liquidity pool and added to the farm to receive larger rewards. They can also be withdrawn and converted into cash.",
+      "question": "Any more questions? Submit a request",
+      "block": {
+        "title": "What are the differences in staking ?",
+        "text1": "\"Staking\" and \"yield farming\" on DeFi networks allow you to receive passive income. DeFi is a general term for decentralized finance or decentralized financial services for currencies and smart contracts built on blockchain.",
+        "text2": "At its core, staking and profitable farming are about the same thing. They involve investing money in one or more cryptocurrencies and collecting interest and commission from transactions on the blockchain. Cryptocurrency needs to be stored in an account so that it collects interest and commissions when funds pass through validators — nodes in the blockchain that support the network. When validators participate in the execution of transactions, stakeholders receive part of the commission.",
+        "title2": "What risks can you face ?",
+        "text3": "Profitable farming is not only more profitable than stacking, but also riskier.",
+        "text4": "Tokens offering such high interest rates and profit from commissions are more likely to drop significantly in price if the main token falls sharply in price. This is called \"impermanent loss\". Even if the commissions brought good earnings, the market value of tokens may decrease, devaluing investments in the farm."
+      }
+    },
+    "nav": {
+      "title": "Articles in this section",
+      "link1": "What is a DEX exchange?",
+      "link2": "What is farming?",
+      "link3": "Tokenized companies",
+      "link4": "Envoys Vision Wallet",
+      "link5": "Crypto Loans and Cryptocurrency Landing"
+    },
+    "request": {
+      "title": "Still need our help?",
+      "text": "You can also submit a question or request here and we'll be sure to get back to you! 👇",
+      "btn": "Submit Request"
+    }
+  }
+  
+}

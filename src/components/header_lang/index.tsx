@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {ReactComponent as Web} from '../../assets/lang/web.svg';
 import {ReactComponent as Arrow} from '../../assets/lang/arrow-down.svg';
+import {changeLang} from '../../translater/i18next';
 
 const Button = styled.button`
   display: flex;
@@ -117,32 +118,40 @@ const DropDownButton = styled.button`
   }
 `;
 type Props = {
-	langActive: boolean;
-	setLangActive: React.Dispatch<React.SetStateAction<boolean>>;
 	dark: boolean;
 };
 
-const HeaderLang: React.FC<Props> = ({langActive, setLangActive, dark}) => {
+const HeaderLang: React.FC<Props> = ({dark}) => {
+	const [langActive, setLangActive] = React.useState(false);
+
 	useEffect(() => {
-		console.log(langActive);
-	}, [langActive]);
-	const toggle = () => {
-		setLangActive(!langActive);
-	};
+		document.body.addEventListener('click', () => {
+			setLangActive(false);
+		});
+	}, []);
 
 	return (
 		<>
 			<Wrap>
 				<Content>
 					<Text dark={dark ? 'true' : 'false'}> Русский </Text>
-					<Button onClick={toggle}>
+
+					<Button onClick={e => {
+						e.stopPropagation();
+						setLangActive(val => !val);
+					}}>
+          
 						<WebIcon dark={dark ? 'true' : 'false'}/>
 						<ArrowIcon dark={dark ? 'true' : 'false'} rotate={langActive ? 'true' : 'false'}/>
 					</Button>
 				</Content>
 				<DropDown show={langActive}>
-					<DropDownButton>Русский</DropDownButton>
-					<DropDownButton>English</DropDownButton>
+					<DropDownButton onClick={() => {
+						changeLang('ru');
+					}}>Русский</DropDownButton>
+					<DropDownButton onClick={() => {
+						changeLang('en');
+					}}>English</DropDownButton>
 				</DropDown>
 			</Wrap>
 		</>

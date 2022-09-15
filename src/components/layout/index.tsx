@@ -19,22 +19,16 @@ type Props = {
 	setDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Layout: React.FC<Props> = ({dark, setDark, children}) => {
-	const [langActive, setLangActive] = React.useState(false);
-
-	return (
-		<>
-			<LayoutWrap onClick={() => {
-				setLangActive(false);
-			}}>
-				<Header dark={dark} setDark={setDark} langActive={langActive} setLangActive={setLangActive}/>
-				<LayoutInside>
-					{children}
-				</LayoutInside>
-				<Footer/>
-			</LayoutWrap>
-		</>
-	);
-};
+const Layout: React.FC<Props> = ({dark, setDark, children}) => (
+	<>
+		<LayoutWrap>
+			<Header dark={dark} setDark={setDark} />
+			<LayoutInside>
+				{children}
+			</LayoutInside>
+			<Footer/>
+		</LayoutWrap>
+	</>
+);
 
 export default Layout;
