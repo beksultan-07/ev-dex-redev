@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from '../header';
 import Footer from '../footer';
 import Cookie from '../cookie';
+import {useLocation} from 'react-router-dom';
 
 const LayoutWrap = styled.div`
   min-height: 100vh;
@@ -23,12 +24,15 @@ type Props = {
 
 const Layout: React.FC<Props> = ({dark, setDark, children}) => {
 	const [confirmCookie, setConfirmCookie] = useState(false);
+
+	const location = useLocation();
+
 	const confirmCookieSaveOnStorage = () => {
 		localStorage.setItem('cookie', JSON.stringify(true));
 		setConfirmCookie(false);
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const cookieFromStorage = localStorage.getItem('cookie');
 		if (cookieFromStorage) {
 			setConfirmCookie(false);
@@ -36,6 +40,16 @@ const Layout: React.FC<Props> = ({dark, setDark, children}) => {
 			setConfirmCookie(true);
 		}
 	});
+
+	useEffect(() => {
+		if (location.pathname === '/') {
+			setDark(false);
+		} else {
+			window.addEventListener('scroll', e => {
+				setDark(true);
+			});
+		}
+	}, [location]);
 
 	return (
 		<>

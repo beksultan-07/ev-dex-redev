@@ -23,15 +23,11 @@ const Wrap = styled.section`
   }
 `;
 type Props = {
-	dark: boolean;
 	setDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const DexInfo: React.FC<Props> = ({dark, setDark}) => {
+const DexInfo: React.FC<Props> = ({setDark}) => {
 	useEffect(() => {
 		setDark(true);
-	}, [setDark]);
-
-	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 	return (

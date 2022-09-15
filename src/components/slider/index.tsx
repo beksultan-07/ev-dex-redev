@@ -21,6 +21,7 @@ import 'swiper/css/navigation';
 import {EffectFade, Navigation, Scrollbar, Mousewheel} from 'swiper';
 import {Button, ButtonOutline} from '../../UI/UI';
 import {useTranslation} from 'react-i18next';
+import {useLocation} from 'react-router-dom';
 
 const SwiperWrap = styled.section`
   min-height: 80vh;
@@ -206,7 +207,7 @@ type ColumnProps = {
 };
 const Column = styled.div<ColumnProps>`
 	width: 100%;
-  background-color: ${props => props.bg ? '#111A23' : '#fff'};
+ 	background-color: ${props => props.bg ? '#111A23' : '#fff'};
 `;
 
 type Props = {
@@ -227,15 +228,18 @@ const Slider: React.FC<Props> = ({setDark}) => {
 			unvisible: false,
 		},
 	]);
+
 	const [slideIndex, setSlideIndex] = React.useState<number>(0);
 
 	const [t] = useTranslation();
+	const location = useLocation();
 
 	const checkHeaderOnSlider = () => {
 		const box = document.querySelector('#facts');
 		const headerHeight = document.querySelector('#header')!.clientHeight;
 		if (
 			box
+			&& location.pathname === '/'
 			&& box.getBoundingClientRect().top - headerHeight < 0
 			&& box.getBoundingClientRect().top - headerHeight > -box.clientHeight
 			&& slideIndex > 0
@@ -329,7 +333,7 @@ const Slider: React.FC<Props> = ({setDark}) => {
 			<SwiperWrap id="facts">
 				<Swiper
 					spaceBetween={30}
-					onSlideChange={e => {
+					onSlideChange={(e: {activeIndex: React.SetStateAction<number>}) => {
 						setSlideIndex(e.activeIndex);
 					}}
 					effect={'fade'}
