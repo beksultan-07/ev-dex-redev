@@ -135,10 +135,12 @@ const HeaderLang: React.FC<Props> = ({dark}) => {
 			<Wrap>
 				<Content>
 					<Text dark={dark ? 'true' : 'false'}> Русский </Text>
+
 					<Button onClick={e => {
 						e.stopPropagation();
 						setLangActive(val => !val);
 					}}>
+          
 						<WebIcon dark={dark ? 'true' : 'false'}/>
 						<ArrowIcon dark={dark ? 'true' : 'false'} rotate={langActive ? 'true' : 'false'}/>
 					</Button>

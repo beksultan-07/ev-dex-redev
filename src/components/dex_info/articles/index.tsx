@@ -38,15 +38,21 @@ const LinksLink = styled.a`
 	:hover{
     color: #F48020;
 	}
+	&.disable{
+		color: #bebebe;
+	}
 `;
 
 const Articles: React.FC = () => {
 	const links = [
-		{href: '#', text: 'Что такое DEX биржа ?'},
-		{href: '#', text: 'Что такое фарминг ?'},
-		{href: '#', text: 'Токенизированные компании'},
-		{href: '#', text: 'Кошелек Envoys Vision '},
-		{href: '#', text: 'Криптокредиты и “Landing” криптовалюты'},
+		{href: '#', text: 'Что такое DEX биржа ?', disable: false},
+		{href: '#farming', text: 'Что такое фарминг ?', disable: false},
+		{href: '#tokenized-assets', text: 'Токенизированные компании', disable: false},
+		{href: '#launchpad', text: 'Что такое Launchpad ?', disable: false},
+		{href: '#IDO', text: 'Что такое IDO ?', disable: false},
+		{href: '#STO', text: 'Что такое STO ?', disable: false},
+		{href: '#', text: 'Кошелек Envoys Vision ', disable: true},
+		{href: '#', text: 'Криптокредиты и “Landing” криптовалюты', disable: true},
 	];
 	return (
 		<>
@@ -56,7 +62,7 @@ const Articles: React.FC = () => {
 					<LinksList>
 						{links.map((link, index) => (
 							<LinksItem key={index}>
-								<LinksLink href={link.href}>{link.text}</LinksLink>
+								<LinksLink href={link.href} className={link.disable ? 'disable' : ''}>{link.text}</LinksLink>
 							</LinksItem>
 						))}
 					</LinksList>
