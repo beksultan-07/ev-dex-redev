@@ -61,12 +61,10 @@ const BurgerImageActive = styled(BurgerActive)<HeaderProps>`
   }
 `;
 type Props = {
-	langActive: boolean;
-	setLangActive: React.Dispatch<React.SetStateAction<boolean>>;
 	dark: boolean;
 	setDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Header: React.FC<Props> = ({langActive, setLangActive, dark}) => {
+const Header: React.FC<Props> = ({dark}) => {
 	const [burger, setBurger] = React.useState(false);
 
 	return (
@@ -78,7 +76,7 @@ const Header: React.FC<Props> = ({langActive, setLangActive, dark}) => {
 							<LogoImg src={ dark ? LogoDark as string : Logo as string} alt="logo"/>
               Envoys Vision
 						</LogoLink>
-						<HeaderNavbar dark={dark} langActive={langActive} setLangActive={setLangActive} burger={burger}/>
+						<HeaderNavbar dark={dark} burger={burger}/>
 						<BurgerButton onClick={() => {
 							setBurger(a => !a);
 						}}>
