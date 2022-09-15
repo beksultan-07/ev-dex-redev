@@ -80,7 +80,7 @@ const HowItWorks: React.FC = () => {
 						</Desc>
 						<ImageScroll>
 							<ImageBlock>
-								<Image src={image} alt={HowItWorksImg as string}/>
+								<Image src={image} alt="road map"/>
 							</ImageBlock>
 						</ImageScroll>
 						<SwipeIcon src={Swipe as string} alt={Swipe as string}/>

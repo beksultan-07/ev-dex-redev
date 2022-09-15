@@ -123,16 +123,16 @@ const Documents: React.FC = () => {
 	const docToDownload10 = `${docBaseUrl}uc?export=download&id=1q2HHa6dPSmE8518DUIMtF3Cicns3EbuP`;
 
 	const [docs, setDocs] = React.useState([
-		{title: 'White paper', img: DocumentImg1 as string, link: docToDownload1},
-		{title: 'White paper', img: DocumentImg2 as string, link: docToDownload2},
-		{title: 'White paper', img: DocumentImg3 as string, link: docToDownload3},
-		{title: 'White paper', img: DocumentImg4 as string, link: docToDownload4},
-		{title: 'White paper', img: DocumentImg5 as string, link: docToDownload5},
-		{title: 'White paper', img: DocumentImg6 as string, link: docToDownload6},
-		{title: 'White paper', img: DocumentImg7 as string, link: docToDownload7},
-		{title: 'White paper', img: DocumentImg8 as string, link: docToDownload8},
-		{title: 'White paper', img: DocumentImg9 as string, link: docToDownload9},
-		{title: 'White paper', img: DocumentImg10 as string, link: docToDownload10},
+		{title: 'White paper', img: DocumentImg1 as string, link: docToDownload1, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg2 as string, link: docToDownload2, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg3 as string, link: docToDownload3, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg4 as string, link: docToDownload4, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg5 as string, link: docToDownload5, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg6 as string, link: docToDownload6, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg7 as string, link: docToDownload7, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg8 as string, link: docToDownload8, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg9 as string, link: docToDownload9, alt: 'document image'},
+		{title: 'White paper', img: DocumentImg10 as string, link: docToDownload10, alt: 'document image'},
 	]);
 
 	return (
@@ -187,7 +187,7 @@ const Documents: React.FC = () => {
 									<SwiperSlide key={index}>
 										<Item>
 											<ItemTitle>{doc.title}</ItemTitle>
-											<Image src={doc.img} alt={doc.img}/>
+											<Image src={doc.img} alt={doc.alt}/>
 											<Button href={doc.link}>
 												<Icon src={DownloadIcon as string} alt={DownloadIcon as string}/>
 												<ButtonText>Скачать</ButtonText>
