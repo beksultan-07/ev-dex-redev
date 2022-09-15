@@ -77,6 +77,7 @@ const Number = styled(CountUp)`
 `;
 type ItemType = {
 	img: string;
+	alt: string;
 	text: string;
 	num: number;
 	numType: 'percent' | 'sum' | '';
@@ -86,7 +87,7 @@ const Advantage: React.FC = () => {
 	const [t] = useTranslation();
 
 	const [items, setItems] = useState<ItemType[]>([
-		{img: DollarIcon as string, text: '', num: 0.1, numType: 'percent'},
+		{img: DollarIcon as string, alt: '', text: '', num: 0.1, numType: 'percent'},
 	]);
 
 	const [animCount, setAnimCount] = React.useState(false);
@@ -110,10 +111,10 @@ const Advantage: React.FC = () => {
 	useEffect(() => {
 		setItems(
 			[
-				{img: DollarIcon as string, text: t('home.advantages1.option1'), num: 0.1, numType: 'percent'},
-				{img: SafeIcon as string, text: t('home.advantages1.option2'), num: 625347594, numType: 'sum'},
-				{img: LikeIcon as string, text: t('home.advantages1.option3'), num: 1329113, numType: ''},
-				{img: CaseIcon as string, text: t('home.advantages1.option4'), num: 41600342591, numType: 'sum'},
+				{img: DollarIcon as string, alt: 'dollar icon', text: t('home.advantages1.option1'), num: 0.1, numType: 'percent'},
+				{img: SafeIcon as string, alt: 'safe icon', text: t('home.advantages1.option2'), num: 625347594, numType: 'sum'},
+				{img: LikeIcon as string, alt: 'like icon', text: t('home.advantages1.option3'), num: 1329113, numType: ''},
+				{img: CaseIcon as string, alt: 'case icon', text: t('home.advantages1.option4'), num: 41600342591, numType: 'sum'},
 			],
 		);
 	}, [t]);
@@ -126,7 +127,7 @@ const Advantage: React.FC = () => {
 						<Content ref={ref}>
 							{items.map((item, index) => (
 								<Item key={index}>
-									<Icon src={item.img}/>
+									<Icon src={item.img} alt={item.alt}/>
 									<TextBlock>
 										<Text>{item.text}</Text>
 										{animCount && <Number

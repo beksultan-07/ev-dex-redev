@@ -8,24 +8,17 @@ import Partners from '../../components/partners';
 import Slider from '../../components/slider';
 
 type Props = {
-	dark: boolean;
 	setDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Home: React.FC<Props> = ({dark, setDark}) => {
-	useEffect(() => {
-		setDark(false);
-	}, [setDark]);
-	return (
-		<>
-			<Banner/>
-			<Advantage/>
-			<OurAdvantages/>
-			<Slider setDark={setDark}/>
-			<HowItWorks/>
-			<Documents/>
-			<Partners/>
-		</>
-	);
-};
-
+const Home: React.FC<Props> = ({setDark}) => (
+	<>
+		<Banner/>
+		<Advantage/>
+		<OurAdvantages/>
+		<Slider setDark={setDark}/>
+		<HowItWorks/>
+		<Documents/>
+		<Partners/>
+	</>
+);
 export default Home;

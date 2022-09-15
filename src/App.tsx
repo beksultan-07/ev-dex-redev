@@ -7,12 +7,13 @@ import DexInfo from './pages/dex_info';
 
 const App: React.FC = () => {
 	const [dark, setDark] = React.useState(false);
+
 	return (
 		<>
 			<Layout dark={dark} setDark={setDark}>
 				<Routes>
-					<Route path="/" element={<Home dark={dark} setDark={setDark}/>}/>
-					<Route path="/dex-info" element={<DexInfo dark={dark} setDark={setDark}/>}/>
+					<Route path="/" element={<Home setDark={setDark}/>}/>
+					<Route path="/dex-info" element={<DexInfo setDark={setDark}/>}/>
 				</Routes>
 			</Layout>
 		</>
