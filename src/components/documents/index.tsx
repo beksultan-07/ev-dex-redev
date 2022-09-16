@@ -116,43 +116,43 @@ const Documents: React.FC = () => {
 	const [docs, setDocs] = React.useState([
 		{
 			title: 'Certificate of state registration', img: {
-				en: DocumentImg1 as string,
-				ru: DocumentImg2 as string,
+				ru: DocumentImg1 as string,
+				en: DocumentImg2 as string,
 			}, link: {
-				en: 'https://drive.google.com/uc?export=download&id=1h3q5VPlDBtbD_aTS__g2kLJ-tBHSV-Hy',
-				ru: 'https://drive.google.com/uc?export=download&amp;id=1-G7wdiBMrFYuIwQ74JOgSyhqzdheBP8C',
+				ru: 'https://drive.google.com/uc?export=download&id=1h3q5VPlDBtbD_aTS__g2kLJ-tBHSV-Hy',
+				en: 'https://drive.google.com/uc?export=download&amp;id=1-G7wdiBMrFYuIwQ74JOgSyhqzdheBP8C',
 			}},
 		{
 			title: 'License to organize trading on the securities market', img: {
-				en: DocumentImg3 as string,
-				ru: DocumentImg4 as string,
+				ru: DocumentImg3 as string,
+				en: DocumentImg4 as string,
 			}, link: {
-				en: 'https://drive.google.com/uc?export=download&id=1LqTnk760B5iOcSr2pbN_b6WhzSvddStZ',
-				ru: 'https://drive.google.com/uc?export=download&id=1Vo7zBgJJQ_0hlWUjhqKb1Hotd1naUvZq',
+				ru: 'https://drive.google.com/uc?export=download&id=1LqTnk760B5iOcSr2pbN_b6WhzSvddStZ',
+				en: 'https://drive.google.com/uc?export=download&id=1Vo7zBgJJQ_0hlWUjhqKb1Hotd1naUvZq',
 			}},
 		{
 			title: 'License for depositary activity', img: {
-				en: DocumentImg5 as string,
-				ru: DocumentImg6 as string,
+				ru: DocumentImg5 as string,
+				en: DocumentImg6 as string,
 			}, link: {
-				en: 'https://drive.google.com/uc?export=download&id=1cgfEMTQYwSAhvbbBNHhBp7tmWApFRaLz',
-				ru: 'https://drive.google.com/uc?export=download&id=1tyvB0QkEcu2gDnHd7siOt0_kO2reL9LL',
+				ru: 'https://drive.google.com/uc?export=download&id=1cgfEMTQYwSAhvbbBNHhBp7tmWApFRaLz',
+				en: 'https://drive.google.com/uc?export=download&id=1tyvB0QkEcu2gDnHd7siOt0_kO2reL9LL',
 			}},
 		{
 			title: 'Software State Registration Certificate', img: {
-				en: DocumentImg7 as string,
-				ru: DocumentImg8 as string,
+				ru: DocumentImg7 as string,
+				en: DocumentImg8 as string,
 			}, link: {
-				en: 'https://drive.google.com/uc?export=download&id=1cuQdMlxyNvwWZ839FKS5JBoC_sJ1kFdQ',
-				ru: 'https://drive.google.com/uc?export=download&id=14_XrRvr572qW-R2O24fIypa3e6j_b5xE',
+				ru: 'https://drive.google.com/uc?export=download&id=1cuQdMlxyNvwWZ839FKS5JBoC_sJ1kFdQ',
+				en: 'https://drive.google.com/uc?export=download&id=14_XrRvr572qW-R2O24fIypa3e6j_b5xE',
 			}},
 		{
 			title: 'Decision on the founding issue of shares', img: {
-				en: DocumentImg9 as string,
-				ru: DocumentImg10 as string,
+				ru: DocumentImg9 as string,
+				en: DocumentImg10 as string,
 			}, link: {
-				en: 'https://drive.google.com/uc?export=download&id=1q2HHa6dPSmE8518DUIMtF3Cicns3EbuP',
-				ru: 'https://drive.google.com/uc?export=download&id=1sGBJr5IGt0gNS1H9gEtlCVYPyKEoL5bH',
+				ru: 'https://drive.google.com/uc?export=download&id=1q2HHa6dPSmE8518DUIMtF3Cicns3EbuP',
+				en: 'https://drive.google.com/uc?export=download&id=1sGBJr5IGt0gNS1H9gEtlCVYPyKEoL5bH',
 			}},
 	]);
 
