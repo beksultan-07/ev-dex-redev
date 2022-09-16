@@ -1,5 +1,4 @@
 import React from 'react';
-import {Container} from '../../UI/UI';
 import {ReactComponent as Facebook} from '../../assets/footer/facebook.svg';
 import {ReactComponent as Instagram} from '../../assets/footer/instagram.svg';
 import {ReactComponent as Twitter} from '../../assets/footer/twitter.svg';
@@ -8,6 +7,7 @@ import {ReactComponent as Youtube} from '../../assets/footer/youtube.svg';
 import {ReactComponent as Whatsapp} from '../../assets/footer/whatsapp.svg';
 import styled from 'styled-components';
 import {useSvgComponent} from '../../hooks/useSvgComponent';
+import {useTranslation} from 'react-i18next';
 
 const Wrap = styled.section`
   position: relative;
@@ -18,15 +18,15 @@ const Content = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 0 10px;
-	@media(max-width: 860px ){
-		flex-direction: column;
-		justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+  @media (max-width: 860px ) {
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-		gap: 70px;
-	}
+    gap: 70px;
+  }
 `;
 const JoinWrap = styled.div``;
 const JoinTitle = styled.h2`
@@ -37,6 +37,7 @@ const JoinTitle = styled.h2`
   margin-bottom: 20px;
 `;
 const JoinText = styled.p`
+	max-width: 430px;
   font-weight: 400;
   font-size: 14px;
   line-height: calc(15 / 14 * 100%);
@@ -79,6 +80,7 @@ const Email = styled.input`
   border: none;
   width: 100%;
   outline: none;
+
   ::placeholder {
     font-weight: 400;
     font-size: 13px;
@@ -87,14 +89,14 @@ const Email = styled.input`
 `;
 const LinksLists = styled.div`
   display: grid;
-	max-width: 560px;
+  max-width: 560px;
   grid-template-columns: repeat(3, 1fr);
-	@media(max-width: 960px){
-  	grid-template-columns: repeat(3, 155px);
-	}
-	@media(max-width: 500px){
-		grid-template-columns: repeat(2, 1fr);
-	}
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(3, 155px);
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 const LinksBlock = styled.div``;
 const LinkTitle = styled.h3`
@@ -117,6 +119,7 @@ const FooterLink = styled.a`
   color: #FFFFFF;
   transition: .3s ease-in-out;
   cursor: pointer;
+
   :hover {
     color: rgb(244, 128, 32);
   }
@@ -132,6 +135,7 @@ const CopyText = styled.span`
 `;
 
 const Footer: React.FC = () => {
+	const {t, i18n} = useTranslation();
 	const socialLinks = [
 		{icon: FacebookIcon, href: 'https://www.facebook.com/'},
 		{icon: InstagramIcon, href: 'https://www.instagram.com/'},
@@ -141,25 +145,25 @@ const Footer: React.FC = () => {
 		{icon: WhatsappIcon, href: 'https://www.whatsapp.com/'},
 	];
 	const companyLinks = [
-		{text: 'Develop', href: '#'},
-		{text: 'Economy', href: '#'},
-		{text: 'Tech', href: '#'},
-		{text: 'Community', href: '#'},
-		{text: 'About', href: '#'},
-		{text: 'Blog', href: '#'},
+		{text: {en: 'Develop', ru: 'Develop'}, href: '#'},
+		{text: {en: 'Economy', ru: 'Эконом'}, href: '#'},
+		{text: {en: 'Tech', ru: 'Технология'}, href: '#'},
+		{text: {en: 'Community', ru: 'Сообщество'}, href: '#'},
+		{text: {en: 'About', ru: 'О нас'}, href: '#'},
+		{text: {en: 'Blog', ru: 'Блог'}, href: '#'},
 	];
 	const technologyLinks = [
-		{text: 'Documentation', href: '#'},
-		{text: 'Testnet ', href: '#'},
-		{text: 'ERTP: Electronic Right Transfer Protocol', href: '#'},
-		{text: 'Zoe: Offer-Safety Enforcement', href: '#'},
-		{text: 'SES: Secure ECMAScript', href: '#'},
-		{text: 'IBC', href: '#'},
-		{text: 'Change Logs', href: '#'},
+		{text: {en: 'Documentation', ru: 'Документация'}, href: '#'},
+		{text: {en: 'Testnet ', ru: 'Тестовая сеть'}, href: '#'},
+		{text: {en: 'ERTP: Electronic Right Transfer Protocol', ru: 'ERTP: Electronic Right Transfer Protocol'}, href: '#'},
+		{text: {en: 'Zoe: Offer-Safety Enforcement', ru: 'Zoe: Offer-Safety Enforcement'}, href: '#'},
+		{text: {en: 'SES: Secure ECMAScript', ru: 'SES: Secure ECMAScript'}, href: '#'},
+		{text: {en: 'IBC', ru: 'IBC'}, href: '#'},
+		{text: {en: 'Change Logs', ru: 'Журналы изменений'}, href: '#'},
 	];
 	const legalLinks = [
-		{text: 'Terms and Conditions', href: '#'},
-		{text: 'Privacy Policy', href: '#'},
+		{text: {en: 'Terms and Conditions', ru: 'Условия и положения'}, href: '#'},
+		{text: {en: 'Privacy Policy', ru: 'Политика конфиденциальности'}, href: '#'},
 	];
 
 	return (
@@ -167,8 +171,8 @@ const Footer: React.FC = () => {
 			<Wrap>
 				<Content>
 					<JoinWrap>
-						<JoinTitle>Join the community </JoinTitle>
-						<JoinText>Join our active community of builders and partners</JoinText>
+						<JoinTitle>{t('footer.title')}</JoinTitle>
+						<JoinText>{t('footer.text')}</JoinText>
 						<IconsBlock>
 							{socialLinks.map((link, index) => (
 								<Link href={link.href} target="_blank" key={index}>{useSvgComponent(link.icon)}</Link>
@@ -180,31 +184,32 @@ const Footer: React.FC = () => {
 					</JoinWrap>
 					<LinksLists>
 						<LinksBlock>
-							<LinkTitle>Company</LinkTitle>
+							<LinkTitle>{t('footer.nav.col1.title')}</LinkTitle>
 							<LinksList>
 								{companyLinks.map((companyLink, index) => (
 									<LinkItem key={index}>
-										<FooterLink href={companyLink.href}>{companyLink.text}</FooterLink>
+										<FooterLink
+											href={companyLink.href}>{companyLink.text[i18n.language as keyof typeof companyLink.text]}</FooterLink>
 									</LinkItem>
 								))}
 							</LinksList>
 						</LinksBlock>
 						<LinksBlock>
-							<LinkTitle>Technology</LinkTitle>
+							<LinkTitle>{t('footer.nav.col2.title')}</LinkTitle>
 							<LinksList>
 								{technologyLinks.map((technologyLink, index) => (
 									<LinkItem key={index}>
-										<FooterLink href={technologyLink.href}>{technologyLink.text}</FooterLink>
+										<FooterLink href={technologyLink.href}>{technologyLink.text[i18n.language as keyof typeof technologyLink.text]}</FooterLink>
 									</LinkItem>
 								))}
 							</LinksList>
 						</LinksBlock>
 						<LinksBlock>
-							<LinkTitle>Legal</LinkTitle>
+							<LinkTitle>{t('footer.nav.col3.title')}</LinkTitle>
 							<LinksList>
 								{legalLinks.map((legalLink, index) => (
 									<LinkItem key={index}>
-										<FooterLink href={legalLink.href}>{legalLink.text}</FooterLink>
+										<FooterLink href={legalLink.href}>{legalLink.text[i18n.language as keyof typeof legalLink.text]}</FooterLink>
 									</LinkItem>
 								))}
 							</LinksList>
@@ -212,7 +217,7 @@ const Footer: React.FC = () => {
 					</LinksLists>
 				</Content>
 				<Copy>
-					<CopyText>© 2021 Envoys vision Systems Operating Company. All Rights Reserved.</CopyText>
+					<CopyText>{t('footer.textBottom')}</CopyText>
 				</Copy>
 			</Wrap>
 		</>
