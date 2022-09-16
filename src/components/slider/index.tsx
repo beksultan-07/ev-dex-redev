@@ -322,7 +322,7 @@ const Slider: React.FC<Props> = ({setDark}) => {
 				text: t('home.dex.slide6.text'),
 				right: false,
 				buttonText: '',
-				buttonOutlineText: t('home.dex.slide6.btn'),
+				buttonOutlineText: t('home.dex.slide6.btn1'),
 				unvisible: true,
 			},
 		]);

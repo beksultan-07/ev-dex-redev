@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Button} from '../../UI/UI';
 import ImageCookie from '../../assets/cookie/cookie.svg';
+import {useTranslation} from 'react-i18next';
 
 type ConfirmVisibility = {
 	show: boolean;
@@ -54,21 +55,24 @@ type Props = {
 	setConfirmVisibility: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Cookie: React.FC<Props> = ({confirm, setConfirmVisibility}) => (
-	<>
-		<Wrap show={confirm}>
-			<Image src={ImageCookie as string} alt={Image as string}/>
-			<Title>Ваша конфиденциальность</Title>
-			<Text>
-				Нажимая «Принять все файлы cookie», вы соглашаетесь с тем, что Envoys Dex может хранить файлы cookie на вашем устройстве и раскрывать информацию в соответствии с нашей Политикой использования файлов cookie.
-			</Text>
-			<Button unvisible={false} onClick={() => {
-				setConfirmVisibility(false);
-			}} href="#">
-				Принять все файлы cookie
-			</Button>
-		</Wrap>
-	</>
-);
+const Cookie: React.FC<Props> = ({confirm, setConfirmVisibility}) => {
+	const [t] = useTranslation();
+	return (
+		<>
+			<Wrap show={confirm}>
+				<Image src={ImageCookie as string} alt={Image as string}/>
+				<Title>{t('cookies.title')}</Title>
+				<Text>
+					{t('cookies.text')}
+				</Text>
+				<Button unvisible={false} onClick={() => {
+					setConfirmVisibility(false);
+				}} href="#">
+					{t('cookies.btn')}
+				</Button>
+			</Wrap>
+		</>
+	);
+};
 
 export default Cookie;

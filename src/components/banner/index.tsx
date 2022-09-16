@@ -139,9 +139,16 @@ const Banner: React.FC = () => {
 				<Container>
 					<Content>
 						<ContentText>
-							<Title>Безопасность <YellowTitle>Скорость</YellowTitle> Ликвидность</Title>
-							<Desc>Envoys Vision - это доступность к финансовым рынкам, безопасность инвестирования в стартапы, высокая
-								доходность для поставщиков ликвидности!</Desc>
+							<Title>
+								{t('home.banner.title.title1')}
+								<YellowTitle>
+									{t('home.banner.title.title2')}
+								</YellowTitle>
+								{t('home.banner.title.title1')}
+							</Title>
+							<Desc>
+								{t('home.banner.text')}
+							</Desc>
 							<ButtonWrap>
 								<Button className="banner__button" unvisible={false} target="_blank" href="https://app.envoys.vision/swap">
 									{t('home.banner.btn1')}
