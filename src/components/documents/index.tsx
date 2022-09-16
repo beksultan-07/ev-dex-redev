@@ -14,7 +14,7 @@ import DocumentImg9 from '../../assets/documents/Документы-ЕВДЕ9.we
 import DocumentImg10 from '../../assets/documents/Документы-ЕВДЕ10.webp';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-// import {Autoplay} from 'swiper';
+import {Autoplay} from 'swiper';
 import {useTranslation} from 'react-i18next';
 
 const Wrap = styled.section`
@@ -24,11 +24,12 @@ const Wrap = styled.section`
   align-items: center;
 `;
 const Content = styled.div`
-	width: 100%;
-	min-height: 560px;
+  width: 100%;
+  min-height: 560px;
   background: #111A23;
   padding: 70px 0;
   position: relative;
+
   ::before, ::after {
     content: "";
     display: block;
@@ -40,15 +41,18 @@ const Content = styled.div`
     z-index: 2;
     background: linear-gradient(271.49deg, rgb(10, 29, 47) 30.42%, rgba(255, 255, 255, 0) 95.89%);
   }
+
   ::before {
     transform: rotate(180deg);
     left: 0;
   }
-  @media(max-width: 780px){
-    :before{
+
+  @media (max-width: 780px) {
+    :before {
       display: none;
     }
-    :after{
+
+    :after {
       display: none;
     }
   }
@@ -65,7 +69,7 @@ const Item = styled.div`
   text-align: center;
 `;
 const ItemTitle = styled.h3`
-	min-height: 120px;
+  height: 130px;
   font-weight: 400;
   font-size: 14px;
   line-height: 123.19%;
@@ -92,10 +96,12 @@ const Button = styled.a`
   align-items: center;
   gap: 10px;
   cursor: pointer;
-	transition: .3s ease-in-out;
-	:hover{
+  transition: .3s ease-in-out;
+
+  :hover {
     background: #0b45b2;
-	}
+  }
+
   @media (max-width: 420px) {
     left: 50%;
     transform: translateX(-50%);
@@ -115,45 +121,57 @@ const Documents: React.FC = () => {
 
 	const [docs, setDocs] = React.useState([
 		{
-			title: 'Certificate of state registration', img: {
-				ru: DocumentImg1 as string,
-				en: DocumentImg2 as string,
+			title: {
+				en: 'Certificate of state registration of a legal entity',
+				ru: 'Cвидетельство государственной регистрации юридического лица',
+			},
+			img: {
+				en: DocumentImg1 as string,
+				ru: DocumentImg2 as string,
 			}, link: {
-				ru: 'https://drive.google.com/uc?export=download&id=1h3q5VPlDBtbD_aTS__g2kLJ-tBHSV-Hy',
-				en: 'https://drive.google.com/uc?export=download&amp;id=1-G7wdiBMrFYuIwQ74JOgSyhqzdheBP8C',
-			}},
+				en: 'https://drive.google.com/uc?export=download&id=1h3q5VPlDBtbD_aTS__g2kLJ-tBHSV-Hy',
+				ru: 'https://drive.google.com/uc?export=download&amp;id=1-G7wdiBMrFYuIwQ74JOgSyhqzdheBP8C',
+			},
+		},
 		{
-			title: 'License to organize trading on the securities market', img: {
-				ru: DocumentImg3 as string,
-				en: DocumentImg4 as string,
+			title: {
+				en: 'License for the organization of trading on the securities market',
+				ru: 'Лицензия осуществление организации торговли на рынке ценных бумаг',
+			},
+			img: {
+				en: DocumentImg3 as string,
+				ru: DocumentImg4 as string,
 			}, link: {
-				ru: 'https://drive.google.com/uc?export=download&id=1LqTnk760B5iOcSr2pbN_b6WhzSvddStZ',
-				en: 'https://drive.google.com/uc?export=download&id=1Vo7zBgJJQ_0hlWUjhqKb1Hotd1naUvZq',
-			}},
+				en: 'https://drive.google.com/uc?export=download&id=1LqTnk760B5iOcSr2pbN_b6WhzSvddStZ',
+				ru: 'https://drive.google.com/uc?export=download&id=1Vo7zBgJJQ_0hlWUjhqKb1Hotd1naUvZq',
+			},
+		},
 		{
-			title: 'License for depositary activity', img: {
-				ru: DocumentImg5 as string,
-				en: DocumentImg6 as string,
+			title: {
+				en: 'License for depositary activity on the securities market',
+				ru: 'Лицензия на осуществление депозитарной деятельности на рынке ценных бумаг',
+			},
+			img: {
+				en: DocumentImg5 as string,
+				ru: DocumentImg6 as string,
 			}, link: {
-				ru: 'https://drive.google.com/uc?export=download&id=1cgfEMTQYwSAhvbbBNHhBp7tmWApFRaLz',
-				en: 'https://drive.google.com/uc?export=download&id=1tyvB0QkEcu2gDnHd7siOt0_kO2reL9LL',
-			}},
+				en: 'https://drive.google.com/uc?export=download&id=1cgfEMTQYwSAhvbbBNHhBp7tmWApFRaLz',
+				ru: 'https://drive.google.com/uc?export=download&id=1tyvB0QkEcu2gDnHd7siOt0_kO2reL9LL',
+			},
+		},
 		{
-			title: 'Software State Registration Certificate', img: {
-				ru: DocumentImg7 as string,
-				en: DocumentImg8 as string,
+			title: {
+				en: 'Сertificate of state registration of computer program',
+				ru: 'Свидетельство о государственной регистрации программы для ЭВМ',
+			},
+			img: {
+				en: DocumentImg7 as string,
+				ru: DocumentImg8 as string,
 			}, link: {
-				ru: 'https://drive.google.com/uc?export=download&id=1cuQdMlxyNvwWZ839FKS5JBoC_sJ1kFdQ',
-				en: 'https://drive.google.com/uc?export=download&id=14_XrRvr572qW-R2O24fIypa3e6j_b5xE',
-			}},
-		{
-			title: 'Decision on the founding issue of shares', img: {
-				ru: DocumentImg9 as string,
-				en: DocumentImg10 as string,
-			}, link: {
-				ru: 'https://drive.google.com/uc?export=download&id=1q2HHa6dPSmE8518DUIMtF3Cicns3EbuP',
-				en: 'https://drive.google.com/uc?export=download&id=1sGBJr5IGt0gNS1H9gEtlCVYPyKEoL5bH',
-			}},
+				en: 'https://drive.google.com/uc?export=download&id=1cuQdMlxyNvwWZ839FKS5JBoC_sJ1kFdQ',
+				ru: 'https://drive.google.com/uc?export=download&id=14_XrRvr572qW-R2O24fIypa3e6j_b5xE',
+			},
+		},
 	]);
 
 	return (
@@ -161,15 +179,15 @@ const Documents: React.FC = () => {
 			<Wrap id="documents">
 				<Content>
 					<Container>
-						<Title indentBottom={'90px'} textAlign={true} color={'#fff'}>Документы</Title>
+						<Title indentBottom={'90px'} textAlign={true} color={'#fff'}>{t('home.docs.title')}</Title>
 						<SwiperWrap>
 							<Swiper
 								centeredSlides={true}
-								// autoplay={{
-								// 	delay: 3000,
-								// 	disableOnInteraction: false,
-								// 	pauseOnMouseEnter: true,
-								// }}
+								autoplay={{
+									delay: 3000,
+									disableOnInteraction: false,
+									pauseOnMouseEnter: true,
+								}}
 								slidesPerView="auto"
 								speed={2000}
 								spaceBetween={30}
@@ -201,17 +219,17 @@ const Documents: React.FC = () => {
 										slidesPerView: 7,
 									},
 								}}
-								// modules={[Autoplay]}
+								modules={[Autoplay]}
 								className="mySwiper"
 							>
 								{docs.map((doc, index) => (
 									<SwiperSlide key={index}>
 										<Item>
-											<ItemTitle>{doc.title}</ItemTitle>
+											<ItemTitle>{doc.title[i18n.language as keyof typeof doc.title]}</ItemTitle>
 											<Image src={doc.img[i18n.language as keyof typeof doc.img]} alt={'document'}/>
 											<Button href={doc.link[i18n.language as keyof typeof doc.link]}>
 												<Icon src={DownloadIcon as string} alt={'download icon'}/>
-												<ButtonText>Скачать</ButtonText>
+												<ButtonText>{t('home.docs.btn')}</ButtonText>
 											</Button>
 										</Item>
 									</SwiperSlide>
