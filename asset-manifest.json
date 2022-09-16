@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ev-dex-redev/static/css/main.ad5bf6a6.css",
-    "main.js": "/ev-dex-redev/static/js/main.cc45e3db.js",
+    "main.js": "/ev-dex-redev/static/js/main.9070e4a6.js",
     "static/media/nft.png": "/ev-dex-redev/static/media/nft.3e703bcd6d5e189cf7b9.png",
     "static/media/launchpad-mobile.png": "/ev-dex-redev/static/media/launchpad-mobile.e32d39c5bd9d669e6fcc.png",
     "static/media/cryptocredits.png": "/ev-dex-redev/static/media/cryptocredits.ec5f2630dc2677954760.png",
@@ -56,10 +56,10 @@
     "static/media/arrow.svg": "/ev-dex-redev/static/media/arrow.30850dc8379118b275485507a121d23d.svg",
     "static/media/arrow-down.svg": "/ev-dex-redev/static/media/arrow-down.a1a5a34d19d073d2bae0605bfa723fb8.svg",
     "main.ad5bf6a6.css.map": "/ev-dex-redev/static/css/main.ad5bf6a6.css.map",
-    "main.cc45e3db.js.map": "/ev-dex-redev/static/js/main.cc45e3db.js.map"
+    "main.9070e4a6.js.map": "/ev-dex-redev/static/js/main.9070e4a6.js.map"
   },
   "entrypoints": [
     "static/css/main.ad5bf6a6.css",
-    "static/js/main.cc45e3db.js"
+    "static/js/main.9070e4a6.js"
   ]
 }
