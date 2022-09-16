@@ -66,6 +66,14 @@ const ButtonWrap = styled.div`
   align-items: center;
   gap: 30px;
   margin-bottom: 65px;
+	@media(max-width: 375px){
+		gap: 20px;
+	}
+	.banner__button{
+		@media(max-width: 355px){
+			font-size: 11px;
+		}
+	}
 `;
 const SocialWrap = styled.div`
   display: flex;
@@ -135,14 +143,12 @@ const Banner: React.FC = () => {
 							<Desc>Envoys Vision - это доступность к финансовым рынкам, безопасность инвестирования в стартапы, высокая
 								доходность для поставщиков ликвидности!</Desc>
 							<ButtonWrap>
-
-								<Button unvisible={false} target="_blank" href="https://app.envoys.vision/swap">
+								<Button className="banner__button" unvisible={false} target="_blank" href="https://app.envoys.vision/swap">
 									{t('home.banner.btn1')}
 								</Button>
-								<ButtonOutline soon={false} white={false} to="/dex-info">
+								<ButtonOutline className="banner__button" soon={false} white={false} to="/dex-info">
 									{t('home.banner.btn2')}
 								</ButtonOutline>
-
 							</ButtonWrap>
 							<SocialWrap>
 								{icons.map((icon, index) => (

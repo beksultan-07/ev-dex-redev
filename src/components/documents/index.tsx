@@ -14,7 +14,7 @@ import DocumentImg9 from '../../assets/documents/Документы-ЕВДЕ9.we
 import DocumentImg10 from '../../assets/documents/Документы-ЕВДЕ10.webp';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-import {Autoplay} from 'swiper';
+// import {Autoplay} from 'swiper';
 import {useTranslation} from 'react-i18next';
 
 const Wrap = styled.section`
@@ -65,6 +65,7 @@ const Item = styled.div`
   text-align: center;
 `;
 const ItemTitle = styled.h3`
+	min-height: 120px;
   font-weight: 400;
   font-size: 14px;
   line-height: 123.19%;
@@ -164,11 +165,11 @@ const Documents: React.FC = () => {
 						<SwiperWrap>
 							<Swiper
 								centeredSlides={true}
-								autoplay={{
-									delay: 3000,
-									disableOnInteraction: false,
-									pauseOnMouseEnter: true,
-								}}
+								// autoplay={{
+								// 	delay: 3000,
+								// 	disableOnInteraction: false,
+								// 	pauseOnMouseEnter: true,
+								// }}
 								slidesPerView="auto"
 								speed={2000}
 								spaceBetween={30}
@@ -200,7 +201,7 @@ const Documents: React.FC = () => {
 										slidesPerView: 7,
 									},
 								}}
-								modules={[Autoplay]}
+								// modules={[Autoplay]}
 								className="mySwiper"
 							>
 								{docs.map((doc, index) => (
