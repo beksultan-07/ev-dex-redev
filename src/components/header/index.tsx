@@ -78,7 +78,7 @@ const Header: React.FC<Props> = ({dark}) => {
 							<LogoImg src={ dark ? LogoDark as string : Logo as string} alt="logo"/>
 						Envoys Vision
 						</LogoLink>
-						<HeaderNavbar dark={dark} burger={burger}/>
+						<HeaderNavbar setBurger={setBurger} dark={dark} burger={burger}/>
 						<BurgerButton onClick={() => {
 							setBurger(a => !a);
 						}}>

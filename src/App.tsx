@@ -12,6 +12,7 @@ const App: React.FC = () => {
 		<>
 			<Layout dark={dark} setDark={setDark}>
 				<Routes>
+					<Route path="*" element={<h1>Ошибка страницы</h1>}/>
 					<Route path="/" element={<Home setDark={setDark}/>}/>
 					<Route path="/dex-info" element={<DexInfo setDark={setDark}/>}/>
 				</Routes>

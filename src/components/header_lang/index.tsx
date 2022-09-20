@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {ReactComponent as Web} from '../../assets/lang/web.svg';
 import {ReactComponent as Arrow} from '../../assets/lang/arrow-down.svg';
 import {changeLang} from '../../translater/i18next';
+import {useTranslation} from 'react-i18next';
 
 const Button = styled.button`
   display: flex;
@@ -91,8 +92,8 @@ const DropDown = styled.div<DropDownProps>`
     backdrop-filter: blur(21.0503px);
     padding: 70px 0px 70px 70px;
     transition: .3s;
+  	top: 60px;
     position: fixed;
-    top: 48px;
     left: 0;
     display: flex;
     align-items: flex-start;
@@ -130,6 +131,8 @@ type Props = {
 };
 
 const HeaderLang: React.FC<Props> = ({dark}) => {
+	const {i18n} = useTranslation();
+
 	const [langActive, setLangActive] = React.useState(false);
 
 	useEffect(() => {
@@ -138,12 +141,13 @@ const HeaderLang: React.FC<Props> = ({dark}) => {
 		});
 	}, []);
 
+	const langText = {text: {en: 'English', ru: 'Русский'}};
+
 	return (
 		<>
 			<Wrap>
 				<Content>
-					<Text dark={dark ? 'true' : 'false'}> Русский </Text>
-
+					<Text dark={dark ? 'true' : 'false'}>{langText.text[i18n.language as keyof typeof langText.text]}</Text>
 					<Button onClick={e => {
 						e.stopPropagation();
 						setLangActive(val => !val);

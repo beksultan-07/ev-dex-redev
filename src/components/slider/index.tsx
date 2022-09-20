@@ -23,7 +23,8 @@ import {Button, ButtonOutline} from '../../UI/UI';
 import {useTranslation} from 'react-i18next';
 import {useLocation} from 'react-router-dom';
 
-const SwiperWrap = styled.section`
+const Wrap = styled.section``;
+const SwiperWrap = styled.div`
   min-height: 80vh;
   height: 80%;
   display: flex;
@@ -191,7 +192,7 @@ const Buttons = styled.div`
 	}
 `;
 
-const AdaptiveWrap = styled.section`
+const AdaptiveWrap = styled.div`
 	display: none;
 	@media(max-width: 992px){
 		display: block;
@@ -289,8 +290,8 @@ const Slider: React.FC<Props> = ({setDark}) => {
 				text: t('home.dex.slide3.text'),
 				right: true,
 				buttonText: t('home.dex.slide3.btn1'),
-				buttonOutlineText: t('home.dex.slide3.btn2'),
-				unvisible: false,
+				buttonOutlineText: t('home.dex.slide6.btn1'),
+				unvisible: true,
 			},
 			{
 				img: {desktop: LaunchBg as string, mobile: LaunchBgMobile as string},
@@ -330,62 +331,64 @@ const Slider: React.FC<Props> = ({setDark}) => {
 
 	return (
 		<>
-			<SwiperWrap id="facts">
-				<Swiper
-					spaceBetween={30}
-					onSlideChange={(e: {activeIndex: React.SetStateAction<number>}) => {
-						setSlideIndex(e.activeIndex);
-					}}
-					effect={'fade'}
-					navigation={true}
-					scrollbar={{
-						hide: false,
-					}}
-					mousewheel={{
-						releaseOnEdges: true,
-					}}
-					modules={[EffectFade, Navigation, Scrollbar, Mousewheel]}
-					className="mySwiper"
-				>
-					{slides.map((slide, index) => (
-						<SwiperSlide key={index}>
-							<Slide image={slide.img.desktop}>
-								<Info positionRight={slide.right}>
-									<Title white={slide.whiteTitle}> <TitleSpan>{slide.yellowTitle}</TitleSpan> {slide.title}</Title>
+			<Wrap id="facts">
+				<SwiperWrap>
+					<Swiper
+						spaceBetween={30}
+						onSlideChange={(e: {activeIndex: React.SetStateAction<number>}) => {
+							setSlideIndex(e.activeIndex);
+						}}
+						effect={'fade'}
+						navigation={true}
+						scrollbar={{
+							hide: false,
+						}}
+						mousewheel={{
+							releaseOnEdges: true,
+						}}
+						modules={[EffectFade, Navigation, Scrollbar, Mousewheel]}
+						className="mySwiper"
+					>
+						{slides.map((slide, index) => (
+							<SwiperSlide key={index}>
+								<Slide image={slide.img.desktop}>
+									<Info positionRight={slide.right}>
+										<Title white={slide.whiteTitle}> <TitleSpan>{slide.yellowTitle}</TitleSpan> {slide.title}</Title>
+										<Text white={slide.whiteTitle}>{slide.text}</Text>
+										<Buttons>
+											<Button unvisible={slide.unvisible}>{slide.buttonText}</Button>
+											<ButtonOutline soon={slide.unvisible} white={slide.whiteTitle} to={slide.unvisible ? '#' : '/dex-info'}>
+												{slide.buttonOutlineText}
+											</ButtonOutline>
+										</Buttons>
+									</Info>
+								</Slide>
+							</SwiperSlide>
+						))}
+						<FillBarBlock>
+							<FillBar width={slideIndex / (slides.length - 1) * 100}></FillBar>
+						</FillBarBlock>
+					</Swiper>
+				</SwiperWrap>
+
+				<AdaptiveWrap>
+					<Content>
+						{slides.map((slide, index) => (
+							<Column bg={slide.whiteTitle} key={index}>
+								<ImageBlock><Image src={slide.img.mobile}/></ImageBlock>
+								<Info positionRight={false}>
+									<Title white={slide.whiteTitle}><TitleSpan>{slide.yellowTitle}</TitleSpan> {slide.title}</Title>
 									<Text white={slide.whiteTitle}>{slide.text}</Text>
 									<Buttons>
 										<Button unvisible={slide.unvisible}>{slide.buttonText}</Button>
-										<ButtonOutline soon={slide.unvisible} white={slide.whiteTitle} to={slide.unvisible ? '#' : '/dex-info'}>
-											{slide.buttonOutlineText}
-										</ButtonOutline>
+										<ButtonOutline soon={slide.unvisible} white={slide.whiteTitle} to={slide.unvisible ? '#' : '/dex-info'}>{slide.buttonOutlineText}</ButtonOutline>
 									</Buttons>
 								</Info>
-							</Slide>
-						</SwiperSlide>
-					))}
-					<FillBarBlock>
-						<FillBar width={slideIndex / (slides.length - 1) * 100}></FillBar>
-					</FillBarBlock>
-				</Swiper>
-			</SwiperWrap>
-
-			<AdaptiveWrap>
-				<Content>
-					{slides.map((slide, index) => (
-						<Column bg={slide.whiteTitle} key={index}>
-							<ImageBlock><Image src={slide.img.mobile}/></ImageBlock>
-							<Info positionRight={false}>
-								<Title white={slide.whiteTitle}><TitleSpan>{slide.yellowTitle}</TitleSpan> {slide.title}</Title>
-								<Text white={slide.whiteTitle}>{slide.text}</Text>
-								<Buttons>
-									<Button unvisible={slide.unvisible}>{slide.buttonText}</Button>
-									<ButtonOutline soon={slide.unvisible} white={slide.whiteTitle} to={slide.unvisible ? '#' : '/dex-info'}>{slide.buttonOutlineText}</ButtonOutline>
-								</Buttons>
-							</Info>
-						</Column>
-					))}
-				</Content>
-			</AdaptiveWrap>
+							</Column>
+						))}
+					</Content>
+				</AdaptiveWrap>
+			</Wrap>
 		</>
 	);
 };
