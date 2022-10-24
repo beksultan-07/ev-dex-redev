@@ -1,25 +1,23 @@
 import React from 'react';
-// Import {ReactComponent as Logo} from './logo.svg';
 import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import Layout from './components/layout';
+import Home from './pages/home';
+import DexInfo from './pages/dex_info';
 
 const App: React.FC = () => {
+	const [dark, setDark] = React.useState(false);
+
 	return (
-		<div className="App">
-			<header className="App-header">
-				{/* <Logo className='App-logo'/> */}
-				<p>
-          Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-          Learn React
-				</a>
-			</header>
-		</div>
+		<>
+			<Layout dark={dark} setDark={setDark}>
+				<Routes>
+					<Route path="*" element={<h1>Ошибка страницы</h1>}/>
+					<Route path="/" element={<Home setDark={setDark}/>}/>
+					<Route path="/dex-info" element={<DexInfo setDark={setDark}/>}/>
+				</Routes>
+			</Layout>
+		</>
 	);
 };
 
