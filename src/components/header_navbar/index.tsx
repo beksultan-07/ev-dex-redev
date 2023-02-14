@@ -104,7 +104,7 @@ const HeaderNavbar: React.FC<Props> = ({burger, dark, setBurger}) => {
 					{links.map(link => (<Link dark={dark} onClick={() => {
 						setBurger(false);
 					}} key={link.id} href={link.href} active={false}>{link.text}</Link>))}
-					<Button href="https://app.envoys.vision/swap">{t('header.link6')}</Button>
+					<Button target="_blank" href="https://app.envoys.vision/swap">{t('header.link6')}</Button>
 					<HeaderLang dark={dark}/>
 				</Content>
 			</Navbar>

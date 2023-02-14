@@ -137,12 +137,12 @@ const CopyText = styled.span`
 const Footer: React.FC = () => {
 	const {t, i18n} = useTranslation();
 	const socialLinks = [
-		{icon: FacebookIcon, href: 'https://www.facebook.com/'},
-		{icon: InstagramIcon, href: 'https://www.instagram.com/'},
-		{icon: TwitterIcon, href: 'https://twitter.com'},
-		{icon: LinkedinIcon, href: 'https://www.linkedin.com/'},
-		{icon: YoutubeIcon, href: 'https://www.youtube.com/'},
-		{icon: WhatsappIcon, href: 'https://www.whatsapp.com/'},
+		{icon: FacebookIcon, href: '#'},
+		{icon: InstagramIcon, href: '#'},
+		{icon: TwitterIcon, href: ''},
+		{icon: LinkedinIcon, href: '#'},
+		{icon: YoutubeIcon, href: '#'},
+		{icon: WhatsappIcon, href: '#'},
 	];
 	const companyLinks = [
 		{text: {en: 'Develop', ru: 'Develop'}, href: '#'},

@@ -157,10 +157,10 @@ const Banner: React.FC = () => {
 									{t('home.banner.btn2')}
 								</ButtonOutline>
 							</ButtonWrap>
-							<SocialWrap>
+							{/* <SocialWrap>
 								{icons.map((icon, index) => (
 									<SocialLink target="_blank" href={icon.href} key={index}>{useSvgComponent(icon.icon)}</SocialLink>))}
-							</SocialWrap>
+							</SocialWrap> */}
 						</ContentText>
 						<VideoWrap>
 							<Video autoPlay={true} loop muted={true} playsInline={true}>

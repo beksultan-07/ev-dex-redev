@@ -36,7 +36,7 @@ const DexInfo: React.FC<Props> = ({setDark}) => {
 				<Container>
 					<DexTop/>
 					<DexBottom/>
-					<Request/>
+					{/* <Request/> */}
 				</Container>
 			</Wrap>
 		</>

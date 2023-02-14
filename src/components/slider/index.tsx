@@ -343,9 +343,6 @@ const Slider: React.FC<Props> = ({setDark}) => {
 						scrollbar={{
 							hide: false,
 						}}
-						mousewheel={{
-							releaseOnEdges: true,
-						}}
 						modules={[EffectFade, Navigation, Scrollbar, Mousewheel]}
 						className="mySwiper"
 					>
