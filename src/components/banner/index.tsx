@@ -144,7 +144,7 @@ const Banner: React.FC = () => {
 								<YellowTitle>
 									{t('home.banner.title.title2')}
 								</YellowTitle>
-								{t('home.banner.title.title1')}
+								{t('home.banner.title.title3')}
 							</Title>
 							<Desc>
 								{t('home.banner.text')}
