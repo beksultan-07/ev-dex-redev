@@ -4,7 +4,7 @@ import {Container, Title} from '../../UI/UI';
 import PartnersImg1 from '../../assets/partners/partner1.png';
 import PartnersImg2 from '../../assets/partners/partner2.jpg';
 import PartnersImg3 from '../../assets/partners/partner4.png';
-import PartnersImg4 from '../../assets/partners/partner5.png';
+// import PartnersImg4 from '../../assets/partners/partner5.png';
 
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
@@ -74,7 +74,7 @@ const Partners: React.FC = () => {
 		{img: PartnersImg1 as string, alt: 'company logo'},
 		{img: PartnersImg2 as string, alt: 'company logo'},
 		{img: PartnersImg3 as string, alt: 'company logo'},
-		{img: PartnersImg4 as string, alt: 'company logo'},
+		// {img: PartnersImg4 as string, alt: 'company logo'},
 	];
 	return (
 		<>
